@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Microsoft Teams無料版 Windows編  2020年9月ソフトウエアエンジニアリング株式会社</title>
+	<link href="css/default.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ToggleButton.js"></script>
+	<script type="text/javascript" src="js/cache.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		$(function() {
+		  $("#main").tooltip({
+			show:false,
+			hide:false
+		  });
+		});
+	</script>
+</head>
+
+<body onload="this_content();">
+	<section id="container">
+		<header>
+			<div id="logo"><img src="img_common/logo.png" alt="ソフトウエアエンジニアリング"></div>
+			<div id="head_number">セットアップ手順書-100006</div>
+			<div id="nav">
+				<form action="cgi-bin/abc.cgi" method="post" onsubmit="return false;">
+<input type="text" id="searchText" size="30" placeholder="検索"><input type="text" id="text_hidden"><input type="button" id="searchButton_dummy" onclick="openSearchResult();" value="検索"><input type="submit" id="searchButton" value="" onclick="openSearchResult();">
+</form>
+			</div>
+		</header>
+
+		<!--nav>
+			<ul>
+			<li><input type="checkbox" name="menu-toggle" id="menu-toggle" checked="checked" /><p id="menu_toggle" onclick="menu_toggle()">&#30446;&#27425;</p></li>
+			<li><input type="checkbox" name="head_menu-0" id="head_menu-0" /><a href="" id="head_menu_0">&#12399;&#12376;&#12417;&#12395;</a></li>
+			</ul>
+		</nav-->
+
+		<article>
+			<!--div id="side_menu">
+				<ul class="accordion">
+				</ul>
+			</div-->
+
+			<div id="main">
+				<div id="topicpath">
+				<ol>
+				<li><a href="index.html">ホーム</a></li>
+<li><a href="01-002000.html">2 Teams無料版のセットアップ</a></li>
+<li>2.1 管理者のセットアップ</li>
+</ol>
+				</div>
+				<div id="main_contents">
+				<h3 class="WS_H_2" id="HEADCD_100006">
+<span class="WS_HEADLINE">2.1</span>管理者のセットアップ</h3>
+<p class="WS_S_IMPORTANT"><span class="WS_HEADLINE">・</span>重要</p>
+<p class="WS_P_0B">ここで説明するのは、組織内で初めてTeamsをインストールする管理者の手順です。</p>
+<p class="WS_P_0B">管理者から招待を受けてTeamsに参加するユーザーは、「<a href="01-002003.html#HEADCD_100008">ユーザーのセットアップ</a>」を参照してください。</p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">1.</span>お使いのブラウザから、以下のMicrosoft Teamsのページにアクセスします。</p>
+<p class="WS_P_1"><a href="https://www.microsoft.com/ja-jp/microsoft-365/microsoft-teams/group-chat-software"><span class="WS_U">https://www.microsoft.com/ja-jp/microsoft-365/microsoft-teams/group-chat-software</span></a></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">2.</span>［無料でサインアップ］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image3.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_0N"><span class="WS_HEADLINE">3.</span>会社のメールアドレスを入力して、［次へ］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image4.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p><br></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">4.</span>［仕事と組織向け］を選択して、［次へ］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image5.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">会社のメールアドレスで<strong class="balloontip" title="Microsoftが提供しているサービス。Microsoft に関連するさまざまなサービスにサインインできる。">Microsoftアカウント</strong>を取得していない場合は、新しいアカウントを作成する画面が表示されます。</p>
+<p class="WS_P_1">すでに<strong class="balloontip" title="Microsoftが提供しているサービス。Microsoft に関連するさまざまなサービスにサインインできる。">Microsoftアカウント</strong>を取得している場合は、手順<span class="WS_BOLD">8.</span> に進んでください。</p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">5.</span>［アカウントの作成］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image6.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p><br></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">6.</span><strong class="balloontip" title="Microsoftが提供しているサービス。Microsoft に関連するさまざまなサービスにサインインできる。">Microsoftアカウント</strong>用のパスワードを入力して、［次へ］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image7.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">会社メールアドレスに、<strong class="balloontip" title="Microsoftが提供しているサービス。Microsoft に関連するさまざまなサービスにサインインできる。">Microsoftアカウント</strong>チームから4桁（半角）の<strong class="balloontip" title="セキュリティ情報を保護するために、本人確認を行うための数字や記号。">セキュリティコード</strong>が送信されます。</p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">7.</span>メールで受信した4桁（半角）のコードを入力して、［次へ］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image8.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">アカウントの作成画面が表示されます。しばらくお待ちください。</p>
+<p class="WS_P_1">続いて、パスワードの入力画面が表示されます。</p>
+<p><br></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">8.</span>パスワードを入力して、［サインイン］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image9.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">その他の詳細事項を入力する画面が表示されます。</p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">9.</span>性、名、会社名を入力して、［Teamsのセットアップ］をクリックします。</p>
+<p class="WS_S_IMPORTANT"><span class="WS_HEADLINE">・</span>重要</p>
+<p class="WS_P_1B">ここで入力した「会社名」は、Teamsの「組織名」になります。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image10.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">Teamsセットアップ中の画面が表示されます。しばらくお待ちください。</p>
+<p class="WS_P_1">続いて、アプリの取得画面が表示されます。</p>
+<p><br></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">10.</span>［Teamsアプリを取得する］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image11.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_0N"><span class="WS_HEADLINE">11.</span>画面の下部に確認メッセージが表示されたら、［実行］をクリックします。</p>
+<p class="WS_手順01図"></p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image12.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">インストール中の画面が表示されます。しばらくお待ちください。</p>
+<p class="WS_P_1">続いて、アカウントの入力画面が表示されます。</p>
+<p><br></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">12.</span>会社のメールアドレスを入力して、［サインイン］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image13.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_0N"><span class="WS_HEADLINE">13.</span>パスワードを入力して、［サインイン］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image14.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">インストールが完了しました。</p>
+<p class="WS_P_1">続いて、［Teamsへようこそ！］画面が表示されます。</p>
+<p><br></p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">14.</span>［続行］をクリックします。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image15.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1">ユーザーをTeamsに招待する画面が表示されます。</p>
+<p class="WS_P_0N"><span class="WS_HEADLINE">15.</span>［リンクをコピー］をクリックして、画面を閉じます。</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_手順01図"><img src="img/image16.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_1"><strong class="balloontip" title="WindowsPC上のメモリ領域にある、一時的にデータを保存できる場所。">クリップボード</strong>に、ユーザーをTeamsに招待するためのURLが保存されます。</p>
+<p class="WS_S_REFERENCE"><span class="WS_HEADLINE">・</span>参考</p>
+<p class="WS_P_1B">ユーザーの招待は後で行うこともできます。ここでは、招待されたユーザーのセットアップ操作と連携して、最初に説明します。</p>
+<div><a href="#HEADCD_100006" class="up_link">↑</a></div>
+<br clear="all">
+</div>
+			</div>
+
+		</article>
+
+		<footer>
+			<div id="nav_wrap">
+				<ul>
+					<li id="nav_box2"><a href="01-002000.html"><span>2 Teams無料版のセットアップ</span></a></li>
+					<li id="nav_box3"><a href="index.html"><span>ホーム</span></a></li>
+				<li id="nav_box4"><a href="01-002002.html"><span>2.2 ユーザーを招待する（管理者）</span></a></li>
+</ul>
+
+				<ul>
+					<li id="goback"><a href="#" onclick="history.back(); return false;"><span class="back">前のページに戻る</span></a></li>
+					<li id="back2top"><a id="top_link" href=""><span class="back">ページトップに戻る</span></a></li>
+				</ul>
+
+				<address>Copyright © 2021 Software Engineering CO.,LTD.</address>
+			</div>
+
+		</footer>
+
+	</section>
+
+</body>
+
+</html>
