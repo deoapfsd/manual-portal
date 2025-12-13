@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>検品作業マニュアル|サイト内検索</title>
+	<link href="css/default.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ToggleButton.js"></script>
+	<script type="text/javascript" src="js/cache.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		.search_area {
+			margin: 0.4em 0.8em 1.6em;
+		}
+		.search_area p:first-child {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		.search_area p:nth-child(2)::before {
+			content: "... "
+		}
+		.search_area p:nth-child(2)::after {
+			content: " ..."
+		}
+	</style>
+</head>
+<body onload="this_content();">
+	<section id="container">
+        <header>
+            <div id="logo"><a href="index.html"><img src="img_common/logo.png" alt="ロゴ"></a></div>
+<!--            <div id="head_number"></div>-->
+            <div id="and_or">
+                <form>
+                    <input type="radio" name="Search_Method" value="and" checked>AND
+                    <input type="radio" name="Search_Method" value="or">OR
+                </form>
+            </div>
+            <div id="nav">
+                <form onsubmit="return false;">
+                    <input type="text" id="searchText" size="30" placeholder="検索">
+                    <input type="text" id="text_hidden">
+                    <input type="button" id="searchButton_dummy" onclick="openSearchResult();" value="検索">
+                    <input type="submit" id="searchButton" value="" onclick="openSearchResult();">
+                </form>
+            </div>
+        </header>
+		<article>
+			<!--div id="side_menu">
+				<ul class="accordion">
+					<li></li>
+				</ul>
+			</div-->
+			<div id="main">
+
+				<div id="result">
+				</div>
+			</div>
+		</article>
+		<footer>
+			<div id="nav_wrap">
+                <address>© xxxx sample CO., LTD.</address>
+			</div>
+		</footer>
+	</section>
+	    <script type="text/javascript" src="js/Delno_topic.js"></script>
+</body>
+</html>
+

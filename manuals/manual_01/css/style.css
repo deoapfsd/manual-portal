@@ -1,0 +1,722 @@
+@charset "utf-8";
+
+html {
+	/* 固定ヘッダの高さ分オフセットする */
+	scroll-padding-top: 144px;
+}
+
+
+/* --------------------------------
+デザイン設定
+-------------------------------- */
+p {
+	min-height: 1em;
+}
+
+img {
+/*	max-width: 90%;*/
+	vertical-align: middle;
+	margin: 0.1em;
+}
+
+body {
+	background-color: #eaedf7;
+	text-align: left;
+}
+
+
+/* --------------------------------
+  ヘッダー設定
+-------------------------------- */
+header {
+	position: fixed;
+	left: 0; top: 0;
+	width: 100%;
+	height: 90px;
+	background: linear-gradient(to right, #fff, #eaedf7);;
+	border-bottom: 1px solid #ccc;
+	z-index: 2;
+}
+
+/* ロゴマーク */
+header #logo {
+	position: absolute;
+	top: 4px; left: 16px;
+}
+
+/* お問い合わせ番号 */
+header #head_number {
+	color: #033;
+	position: absolute;
+	bottom: 8px;
+	left: 16px;
+}
+
+/* 検索 */
+header #nav {
+	width: 400px;
+	text-align: right;
+	position: absolute;
+	bottom: 8px;
+	right: 8px;
+}
+header #nav img {
+	padding-left: 8px;
+}
+
+
+/* --------------------------------
+  編メニュー設定
+-------------------------------- */
+/* 編メニューにフレックスボックスを設定し、幅を均等にする */
+nav {
+	width: 100%;
+	position: fixed;
+	left: 0; top: 120px;
+	z-index: 9;
+}
+nav ul {
+	display:flex;
+	width: 100%;
+	height: 36px;
+	background-color: #fff0f5;
+	border-bottom: 1px solid #ccc;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	justify-content: space-between;
+}
+nav li {
+	float: left;
+	height: 36px;
+	line-height: 2.7em;
+/*	background-color: #fff0f5;*/
+	border-right: 1px solid #ccc;
+/*	border-bottom: 1px solid #ccc;*/
+	white-space: nowrap;
+	overflow: hidden;
+}
+nav li a {
+	height: 36px;
+	padding: 0 0.4em;
+	display: block;
+}
+
+/* 目次部分 */
+nav li:first-child {
+	width: 20%;
+	text-align: left;
+	background-color: #eee;
+	padding: 0 0.4em;
+}
+/* 目次部分をマウスオーバーした時の処理 */
+nav li:first-child:hover {
+	background-color: #ccc;
+}
+
+/* 目次以外のメニュー部分 */
+nav li:nth-child(n + 2) {
+	text-align: center;
+	width: 80%;
+	flex: 1;
+}
+/* 目次以外のメニュー部分をマウスオーバーした時の処理 */
+nav li:nth-child(n + 2):hover {
+	background-color: #efd3da;
+	flex-wrap: wrap;		/* 要素が文字列の幅に応じて広げて、隠れていた文字列を表示する */
+	overflow: visible;
+}
+
+/* チェックボックスを非表示にする */
+nav li input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+	display: none;
+}
+
+nav li:first-child p {
+	position: relative;
+}
+
+/* 目次部分に右矢印を配置する */
+nav li:first-child input+p::after {
+	content: "";
+	width: 14px; height: 14px;
+	background-image: url("../img_common/arrow_06.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 40%; right: 0;
+	transform: rotateY(0deg);
+}
+
+/* チェックボックスがチェックされていたら、目次部分の右矢印180度回転する */
+nav ul li:first-child input:checked+p::after {
+	transform: rotateY(180deg);
+}
+
+
+/* --------------------------------
+  フッター設定
+-------------------------------- */
+footer {
+	position: fixed;
+	left: 0; bottom: 0;
+	width: 100%;
+	height: 90px;
+	background-color: #eaedf7;
+	border-top: 1px solid #ccc;
+	z-index: 2;
+}
+
+#nav_wrap address {
+	width: 100%;
+	height: 1.2em;
+	text-align: center;
+	font-size: 0.9em;
+	position: absolute;
+	left: 50%;
+	bottom: 0.4em;
+	transform: translateX(-50%);
+}
+
+/* ページリンクを配置 */
+/* フッター内の両端に戻る、ページトップに戻る各リンクを配置 */
+#nav_wrap {
+	width: 96%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0.4em 0 0.8em;
+	position: relative;
+}
+
+#nav_wrap ul {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+/* 前ページ、次ページのリンク */
+#nav_wrap ul:first-child {
+	position: absolute;
+	top: 0.2em;
+	left: 0;
+	height: 2.8em;
+}
+
+/* 前のページに戻る、ページトップに戻るのリンク */
+#nav_wrap ul:nth-child(2) {
+	position: absolute;
+	top: 3em;
+	left: 0;
+	height: 1.4em;
+}
+
+#nav_wrap li#nav_box2,
+#nav_wrap li#nav_box3,
+#nav_wrap li#nav_box4,
+#nav_wrap li#goback,
+#nav_wrap li#back2top {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#nav_wrap li#nav_box3 {
+	text-align: center;
+	width: 12%;
+}
+
+#nav_wrap li#nav_box2,
+#nav_wrap li#nav_box4 {
+	width: 44%;
+}
+
+#nav_wrap li#goback,
+#nav_wrap li#back2top {
+	width: 180px;
+}
+
+#nav_wrap li#nav_box2,
+#nav_wrap li#goback {
+	text-align: left;
+}
+
+#nav_wrap li#nav_box4,
+#nav_wrap li#back2top {
+	text-align: right;
+}
+
+#nav_wrap li#nav_box2 a,
+#nav_wrap li#nav_box3 a,
+#nav_wrap li#nav_box4 a,
+#nav_wrap li#goback a,
+#nav_wrap li#back2top a {
+	display: block;
+}
+
+#nav_wrap li#nav_box3 a::before {
+	content: "| ";
+}
+#nav_wrap li#nav_box3 a::after {
+	content: " |";
+}
+
+#nav_wrap li#nav_box2 a,
+#nav_wrap li#goback a {
+	margin-left: 1.2em;
+	position: relative;
+}
+
+#nav_wrap li#nav_box4 a,
+#nav_wrap li#back2top a {
+	margin-right: 1.2em;
+	position: relative;
+}
+
+#nav_wrap li#nav_box2 a::before {
+	content: "";
+	width: 1.2em; height: 13px;
+	text-align: left;
+	background-image: url("../img_common/icon_prev_1.gif");
+	background-repeat: no-repeat; 
+	position: absolute;
+	top: 50%; left: -1.2em;
+	transform: translateY(-50%)
+}
+
+#nav_wrap li#nav_box4 a::after {
+	content: "";
+	width: 1.2em; height: 13px;
+	text-align: right;
+	background-image: url("../img_common/icon_next_1.gif");
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%; right: -1.6em;
+	transform: translateY(-50%)
+}
+
+#nav_wrap li#goback a::before {
+	content: "";
+	width: 1.2em; height: 16px;
+	background-image: url("../img_common/arrow_03.png");
+	background-repeat: no-repeat;
+	/*background-size: contain;*/
+	position: absolute;
+	top: 50%; left: -1.4em;
+	transform: translateY(-50%)
+}
+
+#nav_wrap li#back2top a::after {
+	content: "";
+	width: 1.2em; height: 16px;
+	background-image: url("../img_common/arrow_04.png");
+	background-repeat: no-repeat;
+	/*background-size: contain;*/
+	position: absolute;
+	top: 50%; right: -1.6em;
+	transform: translateY(-50%)
+}/* ページリンク終了 */
+
+
+/* --------------------------------
+  本文設定
+-------------------------------- */
+.anchor {
+	display: block;
+	padding-top: 172px;
+	margin-top: -172px;
+}
+
+#container {
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	background: #fff;
+}
+
+#main {
+	margin: 0 2%;
+	padding: 116px 0 106px;
+}
+
+
+/* 節の頭に戻る */
+a.up_link {
+	display: block;
+	background-color: navy;
+	border-radius: 6px;
+	width: 27px;
+	height: 27px;
+	color: white;
+	font-size: 21px;
+	font-weight: bolder;
+	text-align: center;
+	margin-bottom: 32px;
+	line-height: 1.4;
+	float: right;
+}
+
+
+/* --------------------------------
+  サイドメニュー、表紙メニュー
+-------------------------------- */
+#side_menu {
+	width: 20%;
+	float: left;
+	position: fixed;
+	top: 157px;
+	bottom: 1px;
+	/* bottom: 60px; */
+	overflow-y: auto;
+	background-color: #eee;
+	border-right: 1px solid #ccc;
+	z-index: 9;
+}
+
+/* サイドメニューのスクロールバーを非表示にする */
+#side_menu::-webkit-scrollbar {
+	display:none;
+}
+
+#index_menu {
+	width: 80%;
+	border-bottom: 1px solid #ccc;
+	margin: 120px auto 108px;
+}
+
+/* アコーディオンメニュー */
+#index_menu .accordion,
+#index_menu .accordion_none {
+	width: 100%;
+	line-height: 1.6;
+}
+
+#index_menu .accordion p,
+#index_menu .accordion_none p {
+	cursor: pointer;
+	padding: 0.8em 1.6em 0.4em 0.4em;
+	background: #fff;
+	border-top: 1px solid #ccc;
+	position: relative;
+}
+#index_menu .accordion li ul
+{
+	margin-left: 2.1em;
+}
+/* アコーディオンメニューのチェックボックスを非表示にする */
+#index_menu .accordion li input[type=checkbox] {
+	position: absolute;
+	opacity: 0;
+	display: none;
+}
+/* WS_SET_TOGGLEクラスが設定されたメニューに下矢印を配置する */
+#index_menu .accordion li.WS_SET_TOGGLE input+p::after {
+	content: "";
+	width: 14px; height: 14px;
+	background-image: url("../img_common/arrow_05.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%; right: 0.3em;
+	transform:rotate(0deg);
+}
+/* チェックボックスがチェックされていたら、メニューの下矢印180度回転する */
+#index_menu .accordion li.WS_SET_TOGGLE input:checked+p::after {
+	transform:rotate(180deg);
+}
+#index_menu .accordion li {
+	display: block;;
+}
+#index_menu .accordion li p:hover,
+#index_menu .accordion_none li p:hover {
+	background-color: #dcd6d9;
+}
+#index_menu .accordion .inner {
+	display: none;
+}
+#index_menu .accordion .inner li {
+	padding: 0.8em 0.2em 0.8em 0.8em;
+	background-color: #fff;
+	border-left: 6px solid #7a4171;
+	border-top: 1px solid #ccc;
+	margin-left: -2.1em;
+}
+#index_menu .accordion .inner li:hover {
+	background-color: #dcd6d9;
+}/* アコーディオンメニュー終了 */
+
+/* サイドメニューを展開したまま＆背景色を付ける定義 */
+#index_menu .accordion .inner_open {
+	display: block;
+}
+#index_menu .accordion_none li .selected,
+#index_menu .accordion li .selected {
+	background-color: #e6bbc9;
+}
+
+
+/* --------------------------------
+  ぱんくずリスト
+-------------------------------- */
+#topicpath {
+	position: fixed;		/* パンくずリストを固定する */
+	left: 2%; top: 90px;
+	overflow-y: auto;		/* スクロールバーを表示する */
+	width: 96%;
+	height: 2.8em;
+	background-color: #fff;
+	z-index: 3;
+	padding: 0.2em 0.8em 0.2em 2%;
+	line-height: 1.1;
+}
+
+#topicpath ol li {
+	display: inline;       /* liを横並び＆ブレットを消す */
+}
+
+#topicpath ol li::before {
+	content: " > ";        /* liの前に記号追加 */
+}
+
+#topicpath ol li:first-child::before {
+	content: none;        /* 最初のliだけcontentを消す */
+}
+
+
+/* --------------------------------
+  画面サイズが1001px以上の場合
+-------------------------------- */
+@media screen and (min-width: 1001px) {
+	
+	header,
+	nav,
+	footer,
+	#container,
+	#topicpath {
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+	}
+
+	#container {
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	header {
+		width: 1000px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	nav {
+		width: 1000px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	footer {
+		width: 1000px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#side_menu {
+		width: 200px;
+	}
+	
+	/* パンくずリストを固定にしたため配置設定が必要 */
+	#topicpath {
+		width: 1000px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding-left: 20px;
+		border-left: 1px solid #ccc;
+	}
+
+}
+
+/* --------------------------------
+  画面サイズが679px以下の場合
+-------------------------------- */
+@media screen and (max-width: 679px) {
+	
+	/*nav ul li:first-child {
+		width: 20%;
+	}
+	nav ul li:nth-child(n + 2) {
+		width: 80%;
+	}
+
+	#side_menu {
+		width: 20%;
+		display: none;
+	}*/
+	
+	#main {
+		padding: 136px 0 106px;
+	}
+		
+	#nav_wrap {
+		margin: 0 auto;
+		padding: 0.4em 0;
+		width: 96%;
+	}
+
+	/* パンくずリストを固定にしたため配置設定が必要 */
+/*	#topicpath {
+		width: 96%;
+		left: 2%;
+	}*/
+
+	/* ページリンクボタンの表示調整 */
+	/*#nav_wrap ul {
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}*/
+	#nav_wrap ul:first-child {
+		display: block; 
+	}
+
+	#nav_wrap li#nav_box2,
+	#nav_wrap li#nav_box4 {
+		width: 100%;
+		min-height: 1em;
+		border-bottom: 1px solid #ccc;
+	}
+
+	#nav_wrap li#nav_box3,
+	#nav_wrap li#goback,
+	#nav_wrap li#back2top {
+		display: none;
+	}
+
+	#nav_wrap ul:nth-child(2) {
+		display: none; 
+	}
+
+	#nav_wrap address {
+		font-size: 0.7em;
+	}	
+
+	header {
+		height: 120px;
+	}
+
+	/* 編番号位置調整 */
+	header #head_number {
+		color: #033;
+		position: absolute;
+		top: 60px;
+		left: 16px;
+		font-size: 0.9em;
+	}
+
+	#topicpath {
+		position: fixed;		/* パンくずリストを固定する */
+		left: 2%; top: 120px;
+	}
+
+}
+
+/* --------------------------------
+  検索用
+-------------------------------- */
+.search_box_table{
+	overflow: hidden;
+	/*margin-top:-17px;*/
+}
+#searchText{
+	/*float: left;*/
+	width: 60%;
+	height:25px;
+	line-height:25px;
+	color:#808080;
+	margin-left: 10px;
+	background-color: #fff;
+	padding:0px 5px 0px 5px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	-ms-border-radius: 0px;
+	border-radius: 0px;
+	border: 1px solid #ccc;
+}
+#searchButton{
+	float: right;
+	width: 25px;
+	height:25px;
+	/*margin-left:0px;*/
+	padding: 9px 2px 9px 2px;
+	background:url(../img_common/search.gif) no-repeat center center;
+	border:none;
+	display:block;
+}
+#searchButton_dummy{
+	float: right;
+	padding: 3px 2px 2px 2px;
+	border:none;
+	background-color: #eaedf7;
+	color:blue;
+}
+#text_hidden {
+	display: none;
+}
+
+#search_result{
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 92px;
+	font-size: 1em;
+	text-align: left;
+}
+
+.highlight{
+	background-color:lightpink;
+	pointer-events: none; /* 20181010 ADD */
+}
+
+
+/*--------------------------------
+  用語をマウスオーバーすると用語説明を吹き出しで表示
+-------------------------------- */
+.balloontip {
+	position: relative;			/* 指定した分だけ相対的に移動 */
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px dashed #666;
+	text-decoration: none;
+}
+
+.balloontip:hover .balloon {
+	display: inline;				/* インライン要素として表示 */
+}
+
+.balloon {
+	position: absolute;			/* 親要素を基準 */
+	display: none;					/* 要素を非表示 */
+	padding: 4px;						/* テキストの前後の余白 */
+	/*		background-color: rgba(153, 153, 153, 0.50);*/			/* 背景色（透明度） */
+	background-color: #f9ffff;	/* 背景色 */
+	width: 180px;						/* 吹き出し全体の幅 */
+	left: 0;								/* 表示位置 */
+	top: 100%;							/* 表示位置 */
+	margin-top: 12px;				/* 表示位置 */
+	font-size: 80%;					/* 文字サイズ */
+	font-weight: normal;
+	z-index: 9;
+}
+
+.balloon:after {
+	/*border-bottom: 12px solid rgba(153, 153, 153, 0.50);*/			/* 吹き出し口の高さ・色 */
+	border-bottom: 12px solid #f9ffff;		/* 吹き出し口の高さ・色 */
+	border-left: 10px solid transparent;	/* 吹き出し口の幅1/2 */
+	border-right: 10px solid transparent;	/* 吹き出し口の幅1/2 */
+	top: -12px;							/* 吹き出し口の位置調整 */
+	left: 5%;								/* 吹き出し口の横位置 */
+	content: "";						/* コンテンツの挿入 */
+	position: absolute;			/* 親要素を基準 */
+}

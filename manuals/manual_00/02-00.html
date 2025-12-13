@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>郵送作業マニュアル</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ToggleButton.js"></script>
+    <script type="text/javascript" src="js/cache.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <script type="text/javascript">
+        $(function() {
+            $("#main").tooltip({
+                show: false,
+                hide: false
+            });
+        });
+
+    </script>
+</head>
+
+<body onload="this_content();">
+    <section id="container">
+        <header>
+            <div id="logo"><a href="index.html"><img src="img_common/logo.png" alt="ロゴ"></a></div>
+<!--            <div id="head_number"></div>-->
+            <div id="and_or">
+                <form>
+                    <input type="radio" name="Search_Method" value="and" checked>AND
+                    <input type="radio" name="Search_Method" value="or">OR
+                </form>
+            </div>
+            <div id="nav">
+                <form action="cgi-bin/abc.cgi" method="post" onsubmit="return false;">
+                    <input type="text" id="searchText" size="30" placeholder="検索">
+                    <input type="text" id="text_hidden">
+                    <input type="button" id="searchButton_dummy" onclick="openSearchResult();" value="検索">
+                    <input type="submit" id="searchButton" value="" onclick="openSearchResult();">
+                </form>
+            </div>
+        </header>
+        <article>
+            <div id="main">
+                <div id="topicpath">
+                    <ol>
+                    <li><a href="index.html">ホーム</a></li>
+<li>2 作業手順</li>
+</ol>
+                </div>
+                <div id="wrapper">
+                    <div id="side_menus">
+			<ul class="accordion">
+				<li>
+					<p class="parent_1">郵送作業マニュアル</p>
+					<ul>
+						<li>
+							<div class="chapter_1_1 top_chapter ">
+								<a href="01-00.html#HEADCD_01-00">はじめに</a>
+							</div>
+							<ul class="inner"></ul>
+						</li>
+						<li>
+							<div class="chapter_1_2 top_chapter arrow">
+								<a href="02-00.html#HEADCD_02-00">作業手順</a>
+							</div>
+							<ul class="inner">
+								<li class="section_1_2_1">
+									<a href="02-00.html#HEADCD_02-01">PDFファイルをダウンロードする</a>
+								</li>
+								<li class="section_1_2_2">
+									<a href="02-01.html#HEADCD_02-02">PDFファイルを印刷、封緘する</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+                    <div id="main_contents">
+
+                    <h2 class="WS_H_1" id="HEADCD_02-00">
+作業手順</h2>
+<p class="WS_P_0">ここでは、「#郵送業務依頼共有」における郵送作業の手順を説明します。</p>
+<div><a href="#HEADCD_02-00" class="up_link">↑</a></div>
+<br clear="all"><h3 class="WS_H_2" id="HEADCD_02-01">
+<span class="WS_HEADLINE">2.1</span><span class="WS_C_B">PDFファイルをダウンロードする</span>
+</h3>
+<p class="WS_P_0N">１．ブラウザで共有dropboxにアクセスし、作業中であることがわかるようにPDFファイルをリネームします。</p>
+<p class="WS_S_IMPORTANT_2">重要</p>
+<p class="WS_P_2B">リネーム・ダウンロード時にはWindowsエクスプローラを使用せず、必ずブラウザ上から作業してください。</p>
+<p class="WS_S_IMPORTANT_P3B_END"></p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_P_3"><video src="img/a%E3%83%AA%E3%83%8D%E3%83%BC%E3%83%A0.mp4" poster="img/a%E3%83%AA%E3%83%8D%E3%83%BC%E3%83%A0.jpg" preload="none" controls></video></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_P_0N">２．PDFファイルをダウンロードし、Dropbox(SEC)内の作業フォルダに保存します。</p>
+<p class="WS_S_REFERENCE_2">参考/ヒント</p>
+<p class="WS_P_3B">作業フォルダの階層は以下の通りです。</p>
+<p class="WS_P_4">Dropbox (SEC)\DDS部\project\XXXX\請求書･納品書発送業務\02b_work\yyyymmdd</p>
+<div class="WS_SCROLL"><table class="WS_T_FIG_01">
+	<tr>
+		<td>
+			<p class="WS_P_3"><img src="img/2-1.png"></p>
+		</td>
+	</tr>
+</table></div>
+<p class="WS_S_REFERENCE_P3B_END"></p>
+<div><a href="#HEADCD_02-01" class="up_link">↑</a></div>
+<br clear="all">
+</div>
+                </div>
+            </div>
+        </article>
+
+        <footer>
+            <div id="nav_wrap">
+                <ul>
+                    <li id="nav_box2"><a href="01-00.html"><span>1 はじめに</span></a></li>
+                    <li id="nav_box3"><a href="index.html"><span>ホーム</span></a></li>
+                <li id="nav_box4"><a href="02-01.html"><span>2.2 PDFファイルを印刷、封緘する</span></a></li>
+</ul>
+
+                <ul>
+                    <li id="goback"><a href="#" onclick="history.back(); return false;"><span class="back">前のページに戻る</span></a></li>
+                    <li id="back2top"><a id="top_link" href=""><span class="back">ページトップに戻る</span></a></li>
+                </ul>
+
+                <address>© xxxx sample CO., LTD.</address>
+            </div>
+
+        </footer>
+
+    </section>
+    <script type="text/javascript" src="js/Delno_topic.js"></script>
+</body>
+
+</html>

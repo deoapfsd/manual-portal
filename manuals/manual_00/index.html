@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>郵送作業マニュアル</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ToggleButton.js"></script>
+    <script type="text/javascript" src="js/cache.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <script type="text/javascript">
+        $(function() {
+            $("#main").tooltip({
+                show: false,
+                hide: false
+            });
+        });
+
+    </script>
+</head>
+
+<body onload="this_content();">
+    <section id="container">
+        <header>
+            <div id="logo"><a href="index.html"><img src="img_common/logo.png" alt="ロゴ"></a></div>
+<!--            <div id="head_number"></div>-->
+            <div id="and_or">
+                <form>
+                    <input type="radio" name="Search_Method" value="and" checked>AND
+                    <input type="radio" name="Search_Method" value="or">OR
+                </form>
+            </div>
+            <div id="nav">
+                <form action="cgi-bin/abc.cgi" method="post" onsubmit="return false;">
+                    <input type="text" id="searchText" size="30" placeholder="検索">
+                    <input type="text" id="text_hidden">
+                    <input type="button" id="searchButton_dummy" onclick="openSearchResult();" value="検索">
+                    <input type="submit" id="searchButton" value="" onclick="openSearchResult();">
+                </form>
+            </div>
+        </header>
+        <article>
+            <div id="main">
+                <div id="topicpath">
+                    <ol>
+                    </ol>
+                </div>
+                <div id="wrapper">
+ <div id="home_main_contents">
+
+                    
+
+
+
+
+<p class="WS_COVER_5">郵送作業マニュアル</p>
+<p class="WS_COVER_4">2024年11月15日<br>ソフトウエアエンジニアリング株式会社</p>
+<div id="index_menu">
+			<ul class="accordion">
+				<li>
+					<p class="parent_1">郵送作業マニュアル</p>
+					<ul>
+						<li>
+							<div class="chapter_1_1 top_chapter ">
+								<a href="01-00.html#HEADCD_01-00">はじめに</a>
+							</div>
+							<ul class="inner"></ul>
+						</li>
+						<li>
+							<div class="chapter_1_2 top_chapter arrow">
+								<a href="02-00.html#HEADCD_02-00">作業手順</a>
+							</div>
+							<ul class="inner">
+								<li class="section_1_2_1">
+									<a href="02-00.html#HEADCD_02-01">PDFファイルをダウンロードする</a>
+								</li>
+								<li class="section_1_2_2">
+									<a href="02-01.html#HEADCD_02-02">PDFファイルを印刷、封緘する</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+<p class="WS_S_HISTORY">改訂履歴</p>
+<p class="WS_P_0"><span class="WS_TAB001">2024年11月</span>初版</p>
+</div>
+                </div>
+            </div>
+        </article>
+
+        <footer>
+            <div id="nav_wrap">
+                <ul>
+                    <li id="nav_box2">
+                    </li>
+<li id="nav_box3">
+                </li>
+<li id="nav_box4"><a href="01-00.html"><span>1 はじめに</span></a></li>
+</ul>
+
+                <ul>
+                    <li id="goback"><a href="#" onclick="history.back(); return false;"><span class="back">前のページに戻る</span></a></li>
+                    <li id="back2top"><a id="top_link" href=""><span class="back">ページトップに戻る</span></a></li>
+                </ul>
+
+                <address>© xxxx sample CO., LTD.</address>
+            </div>
+
+        </footer>
+
+    </section>
+    <script type="text/javascript" src="js/Delno_topic.js"></script>
+</body>
+
+</html>

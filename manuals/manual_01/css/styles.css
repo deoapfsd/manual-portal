@@ -1,0 +1,2194 @@
+﻿@charset "UTF-8";
+
+/* --------------------------------
+  タイトルスタイル設定
+-------------------------------- */
+/* 編見出し - レベル1 */
+.WS_H_0 {
+	font-size: 3.2em;
+	color: #333;
+	text-align: center;
+	line-height: 1.2;
+	font-weight: bold;
+	margin-top: 128px;
+	margin-bottom: 64px;
+}
+
+/* 章見出し - レベル2 */
+.WS_H_1,
+.WS_H_A1 {
+	font-size: 1.38em;
+	font-weight: bold;
+	color: #333;
+	width: 100%;
+	border-bottom: 3px solid #7a4171;
+	line-height: 1.2;
+	padding-bottom: 4px;
+	margin: 1.6em 0 0.5em;
+}
+.WS_H_1 span.WS_HEADLINE,
+.WS_H_A1 span.WS_HEADLINE {
+	min-width: 60px;
+	padding-right: 8px;
+	display: inline-block;
+}
+
+/* 節見出し - レベル3 */
+.WS_H_2,
+.WS_H_A2 {
+	font-size: 1.26em;
+	font-weight: bold;
+	color: #333;
+	width: 100%;
+	border-bottom: 3px double #7a4171;
+	line-height: 1.2;
+	padding-bottom: 4px;
+	margin: 1.6em 0 0.5em;
+}
+.WS_H_2 span.WS_HEADLINE,
+.WS_H_A2 span.WS_HEADLINE {
+	min-width: 60px;
+	padding-right: 8px;
+	display: inline-block;
+}
+
+/* 項見出し - レベル4 */
+.WS_H_3,
+.WS_H_A3 {
+	font-weight: bold;
+	color: #333;
+	width: 100%;
+	border-bottom: 2px solid #7a4171;
+	line-height: 1.2;
+	padding-bottom: 4px;
+	margin: 1.6em 0 0.5em;
+}
+.WS_H_3 span.WS_HEADLINE,
+.WS_H_A3 span.WS_HEADLINE {
+	min-width: 60px;
+	padding-right: 8px;
+	display: inline-block;
+}
+
+/* 目見出し - レベル5 */
+.WS_H_4,
+.WS_H_A4 {
+	font-weight: bold;
+	color: #333;
+	width: 100%;
+	border-bottom: 1px solid #7a4171;
+	line-height: 1.2;
+	padding-bottom: 4px;
+	margin: 1.6em 0 0.5em;
+}
+.WS_H_4 span.WS_HEADLINE,
+.WS_H_A4 span.WS_HEADLINE {
+	min-width: 60px;
+	padding-right: 8px;
+	display: inline-block;
+}
+
+.WS_H_1::after,
+.WS_H_A1::after,
+.WS_H_2::after,
+.WS_H_A2::after,
+.WS_H_3::after,
+.WS_H_A3::after,
+.WS_H_4::after,
+.WS_H_A4::after{
+	clear: both;
+}
+
+
+/* 章見出し - レベル2 */
+.WS_H_N1 {
+	font-size: 1.15em;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 2px solid #7a4171;
+	line-height: 1.2;
+	margin: 1.6em 0 0.5em;
+}
+
+/* 節見出し - レベル3 */
+.WS_H_N2 {
+	font-size: 1.05em;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 3px double #7a4171;
+	margin: 1.6em 0 0.5em;
+}
+
+/* 項見出し - レベル4 */
+.WS_H_N3 {
+	font-weight: bold;
+	color: #333;
+	line-height: 1.2;
+	line-height: 1.2;
+	border-bottom: 2px solid #7a4171;
+	margin: 1.6em 0 0.5em;
+}
+
+.WS_H_N1,
+.WS_H_N2,
+.WS_H_N3 {
+	padding-bottom: 4px;
+}
+
+/* --------------------------------
+  段落スタイル設定
+-------------------------------- */
+/* 小見出し - レベル1 */
+/* L字小見出し */
+.WS_S_1L {
+	position: relative;
+	padding: 0.1em 0.4em 0;
+	margin: 1.6em 0 0.6em;
+	border-left: 6px solid #008b8b;
+	border-bottom: 1px solid #008b8b;
+	font-size: 1.05em;
+	font-weight: bold;
+	color: #008b8b;
+	line-height: 1.4;
+}
+.WS_S_1L::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 1px;
+	margin-top:	0;
+	height: 1.5em;
+	border-left: 1px solid #008b8b;
+}
+
+/* 小見出し - レベル1 */
+/* 接頭なし小見出し */
+.WS_S_1 {
+	font-size: 1.05em;
+	font-weight: bold;
+	color: #008b8b;
+	line-height: 1.4;
+	padding: 0.1em 0.1em 0;
+	margin: 1.6em 0 0.6em;
+}
+
+/* 小見出し - レベル2 */
+/* "■"付きの小見出し */
+.WS_S_2B {
+	padding-left: 0;
+	font-size: 1.1em;
+	line-height: 1.4;
+	font-weight: bold;
+	margin: 1.6em 0 0.4em 1.9em;
+}
+.WS_S_2B::before {
+	content: "■";
+	/*font-family: "ＭＳ ゴシック", "MS Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka;*/
+	display: inline-block;
+	width: 1.9em;
+	margin-left: -1.9em;
+}
+
+/* "-"付きの小見出し */
+.WS_S_2H {
+	padding-left: 0;
+	font-size: 1.1em;
+	line-height: 1.4;
+	font-weight: bold;
+	margin: 1.6em 0 0.4em 1.9em;
+}
+.WS_S_2H::before {
+	content: "-";
+	display: inline-block;
+	width: 1.9em;
+	margin-left: -1.9em;
+}
+
+/* 番号付きの小見出し */
+.WS_S_2N {
+	font-size: 1.05em;
+	font-weight: bold;
+	margin-left: 4.8em;
+}
+.WS_S_2N span.WS_HEADLINE {
+	display: inline-block;
+	width: 3.6em;
+	margin-left: -3.6em;
+}
+
+/* 接頭なし小見出し */
+.WS_S_2 {
+	padding-left: 0;
+	font-size: 1.1em;
+	line-height: 1.4;
+	font-weight: bold;
+	margin: 1.6em 0 0.4em 1.9em;
+}
+
+/* 番号付きの小見出し */
+.WS_S_3N {
+	font-weight: bold;
+	margin-left: 7.2em;
+}
+.WS_S_3N span.WS_HEADLINE {
+	display: inline-block;
+	width: 3.6em;
+	margin-left: -3.6em;
+}
+
+/* 小見出し - レベル4 */
+/* 番号付きの小見出し */
+.WS_S_4N {
+	font-weight: bold;
+	margin-left: 8.4em;
+}
+.WS_S_4N span.WS_HEADLINE {
+	display: inline-block;
+	width: 4.8em;
+	margin-left: -4.8em;
+}
+
+/* 右揃え段落 */
+.WS_P_R {
+	text-align: right;
+}
+
+/* 中央揃え段落 */
+.WS_P_C {
+	text-align: center;
+}
+
+/* インデント0字の段落 */
+.WS_P_0 {
+	margin-left: 0;
+	min-height: 1em;
+}
+
+/* インデント0字の段落 */
+.WS_P_0_SMALL {
+	font-size: 0.9em;
+	margin-left: 0;
+	min-height: 1em;
+}
+
+/* インデント1字の段落 */
+.WS_P_1 {
+	margin-left: 2.4em;
+	min-height: 1em;
+}
+
+/* インデント2字の段落 */
+.WS_P_2 {
+	margin-left: 3.6em;
+	min-height: 1em;
+}
+
+/* インデント3字の段落 */
+.WS_P_3 {
+	margin-left: 4.8em;
+	min-height: 1em;
+}
+
+/* インデント4字の段落 */
+.WS_P_4 {
+	margin-left: 6em;
+	min-height: 1em;
+}
+
+/* インデント5字の段落 */
+.WS_P_5 {
+	margin-left: 7.2em;
+	min-height: 1em;
+}
+
+/* インデント0文字のビュレット付き段落 */
+.WS_P_0B,
+.WS_P_0H {
+	margin-left: 2.4em;
+}
+
+/* インデント1字のビュレット付き段落 */
+.WS_P_1B,
+.WS_P_1H {
+	margin-left: 3.6em;
+}
+
+/* インデント2字のビュレット付き段落 */
+.WS_P_2B,
+.WS_P_2H {
+	margin-left: 4.8em;
+}
+
+/* インデント3字のビュレット付き段落 */
+.WS_P_3B,
+.WS_P_3H {
+	margin-left: 6em;
+}
+
+/* インデント4字のビュレット付き段落 */
+.WS_P_4B,
+.WS_P_4H {
+	margin-left: 7.2em;
+}
+
+p.WS_P_0B::before,
+p.WS_P_1B::before,
+p.WS_P_2B::before,
+p.WS_P_3B::before,
+p.WS_P_4B::before {
+	display: inline-block;
+	width: 2.4em;
+	content: "•";
+	margin-left: -2.4em;
+}
+
+p.WS_P_0H::before,
+p.WS_P_1H::before,
+p.WS_P_2H::before,
+p.WS_P_3H::before,
+p.WS_P_4H::before {
+	display: inline-block;
+	width: 1.2em;
+	content: "-";
+	margin-left: -1.2em;
+}
+
+/* インデント0字の番号箇条付き手順段落 */
+.WS_P_STEP_1 {
+	margin-left: 3.8em;
+	font-size: 1.1em;
+}
+.WS_P_STEP_1 span.WS_HEADLINE {
+	display: inline-block;
+	width: 3.8em;
+	margin-left: -3.8em;
+}
+
+/* インデント4.2字のビュレット付き手順段落 */
+.WS_P_STEP_2 {
+	margin-left: 6.3em;
+}
+.WS_P_STEP_2::before {
+	font-family: Wingdings;
+	display: inline-block;
+	width: 2.1em;
+	content: "è";
+	margin-left: -2.1em;
+}
+
+/* インデント0字の番号箇条付き段落 */
+.WS_P_0N {
+	margin-left: 2.4em;
+}
+
+/* インデント1字の番号箇条付き段落 */
+.WS_P_1N {
+	margin-left: 3.6em;
+}
+
+/* インデント2字の番号箇条付き段落 */
+.WS_P_2N {
+	margin-left: 4.8em;
+}
+
+/* インデント3字の番号箇条付き段落 */
+.WS_P_3N {
+	margin-left: 6em;
+}
+
+/* インデント4字の番号箇条付き段落 */
+.WS_P_4N {
+	margin-left: 7.2em;
+}
+
+/* インデント5字の番号箇条付き段落 */
+.WS_P_5N {
+	margin-left: 8.4em;
+}
+
+.WS_P_0N,
+.WS_P_1N,
+.WS_P_2N,
+.WS_P_3N,
+.WS_P_4N,
+.WS_P_5N {
+	margin-top: 1.2em;
+}
+
+.WS_P_0N span.WS_HEADLINE,
+.WS_P_1N span.WS_HEADLINE,
+.WS_P_2N span.WS_HEADLINE,
+.WS_P_3N span.WS_HEADLINE,
+.WS_P_4N span.WS_HEADLINE,
+.WS_P_5N span.WS_HEADLINE {
+	display: inline-block;
+	width: 2.4em;
+	margin-left: -2.4em;
+	font-weight: bold;
+}
+
+/* インデント2字の番号箇条付き段落 */
+.WS_P_2NW {
+	margin-left: 6em;
+}
+
+/* インデント3字の番号箇条付き段落 */
+.WS_P_3NW {
+	margin-left: 7.2em;
+}
+
+/* インデント4字の番号箇条付き段落 */
+.WS_P_4NW {
+	margin-left: 8.4em;
+}
+
+/* インデント5字の番号箇条付き段落 */
+.WS_P_5NW {
+	margin-left: 9.6em;
+}
+
+.WS_P_2NW span.WS_HEADLINE,
+.WS_P_3NW span.WS_HEADLINE,
+.WS_P_4NW span.WS_HEADLINE,
+.WS_P_5NW span.WS_HEADLINE {
+	display: inline-block;
+	width: 3.6em;
+	margin-left: -3.6em;
+}
+
+/* インデント2字の番号箇条付き段落 */
+.WS_P_2NX {
+	margin-left: 7.2em;
+}
+
+/* インデント3字の番号箇条付き段落 */
+.WS_P_3NX {
+	margin-left: 8.4em;
+}
+
+/* インデント4字の番号箇条付き段落 */
+.WS_P_4NX {
+	margin-left: 9.6em;
+}
+
+/* インデント5字の番号箇条付き段落 */
+.WS_P_5NX {
+	margin-left: 10.8em;
+}
+
+.WS_P_2NX span.WS_HEADLINE,
+.WS_P_3NX span.WS_HEADLINE,
+.WS_P_4NX span.WS_HEADLINE,
+.WS_P_5NX span.WS_HEADLINE {
+	display: inline-block;
+	width: 4.8em;
+	margin-left: -4.8em;
+}
+
+/* インデント5字の番号箇条付き段落 */
+.WS_P_5A {
+	margin-left: 8.4em;
+}
+
+.WS_P_5A span.WS_HEADLINE {
+	display: inline-block;
+	width: 2.4em;
+	margin-left: -2.4em;
+}
+
+/* インデント0文字のビュレット付き段落 */
+.WS_P_0S {
+	margin-left: 2.4em;
+}
+
+/* インデント3文字のビュレット付き段落 */
+.WS_P_3S {
+	margin-left: 6em;
+}
+
+p.WS_P_0S::before,
+p.WS_P_3S::before {
+	display: inline-block;
+	width: 2.4em;
+	content: "■";
+	margin-left: -2.4em;
+}
+
+/* インデント1文字のビュレット付き段落 */
+.WS_P_1C {
+	margin-left: 3.6em;
+}
+
+p.WS_P_1C::before {
+	display: inline-block;
+	width: 2.4em;
+	content: "●";
+	margin-left: -2.4em;
+}
+
+.WS_P_HEAD_H1 {
+	font-size: 1.34em;
+	text-align: center;
+}
+
+.WS_P_HEAD_0 {
+	font-size: 0.96em;
+	margin-left: 0;
+}
+
+.WS_P_HEAD_C {
+	text-align: center;
+}
+
+.WS_P_INDEX_1 {
+	margin-left: 3.6em;
+	font-size: 1.05em;
+	font-weight: bold;
+}
+.WS_P_INDEX_1 .WS_TAB {
+	width: 18em; 
+}
+
+.WS_S_SP_1 {
+	font-size: 0.96em;
+	margin-left: 5em;
+	font-weight: bold;
+	font-family: Times New Roman,"ＭＳ Ｐゴシック";
+	font-style: italic;
+}
+
+.WS_S_SP_2S {
+	font-size: 0.96em;
+	margin-left: 12em;
+	font-weight: bold;
+}
+.WS_S_SP_2S::before {
+	display: inline-block;
+	width: 2.4em;
+	content: "■";
+	margin-left: -2.4em;
+}
+
+.WS_P_SP_1C {
+	font-size: 0.96em;
+	margin-left: 14.4em;
+}
+.WS_P_SP_1C::before {
+	display: inline-block;
+	width: 2.4em;
+	content: "●";
+	margin-left: -2.4em;
+}
+
+.WS_P_SP_1 {
+	font-size: 0.96em;
+	margin-left: 12em;
+}
+
+.WS_P_SP_2 {
+	font-size: 0.96em;
+	margin-left: 14.4em;
+}
+
+
+/* --------------------------------
+  段落スタイル（タブ付き）設定
+-------------------------------- */
+.WS_TAB,
+.WS_TAB001,
+.WS_TAB002,
+.WS_P_1 span:first-child.WS_TAB,
+.WS_P_1 span:first-child.WS_TAB001,
+.WS_P_1 span:first-child.WS_TAB002,
+.WS_P_2 span:first-child.WS_TAB,
+.WS_P_2 span:first-child.WS_TAB001,
+.WS_P_2 span:first-child.WS_TAB002,
+.WS_P_3 span:first-child.WS_TAB,
+.WS_P_3 span:first-child.WS_TAB001,
+.WS_P_3 span:first-child.WS_TAB002 {
+	display: inline-block;
+	padding-right: 0.2em;
+}
+
+.WS_TAB {
+	min-width: 6.1em;
+}
+
+.WS_TAB001 {
+	min-width: 12.4em;
+}
+
+.WS_TAB002 {
+	min-width: 18.7em;
+}
+
+.WS_P_1 span:first-child.WS_TAB {
+	min-width: 4em;
+}
+.WS_P_1 span:first-child.WS_TAB001 {
+	min-width: 10.3em;
+}
+.WS_P_1 span:first-child.WS_TAB002 {
+	min-width: 16.6em;
+}
+
+.WS_P_2 span:first-child.WS_TAB {
+	min-width: 1.9em;
+}
+.WS_P_2 span:first-child.WS_TAB001 {
+	min-width: 8.2em;
+}
+.WS_P_2 span:first-child.WS_TAB002 {
+	min-width: 14.5em;
+}
+
+.WS_P_3 span:first-child.WS_TAB {
+	min-width: -0.2em;
+}
+.WS_P_3 span:first-child.WS_TAB001 {
+	min-width: 6.1em;
+}
+.WS_P_3 span:first-child.WS_TAB002 {
+	min-width: 12.4em;
+}
+
+.WS_BORDER_01 {
+	border-bottom: 1px dashed #4d8000;
+	width: 100%;
+	margin: 0 auto 16px;
+}
+
+.WS_S_HISTORY {
+	font-size: 1.1em;
+	color: #2F5496;
+	border-top: 1px solid #2F5496;
+	margin-left: 0;
+	margin-bottom: 0.4em;
+	padding-top: 0.2em;
+}
+
+.WS_S_IMPORTANT,
+.WS_S_REFERENCE {
+	margin-left: 0;
+	margin-top: 1.6em;
+	margin-bottom: 0.6em;
+	padding: 0.2em 0.8em;
+	font-weight: bold;;
+}
+.WS_S_IMPORTANT {
+	border-bottom: 2px solid #DA4026;
+	background: #FBECE9;
+}
+.WS_S_REFERENCE {
+	border-bottom: 2px solid #80BB44;
+	background: #F2F8EC;
+}
+
+.WS_S_IMPORTANT .WS_HEADLINE,
+.WS_S_REFERENCE .WS_HEADLINE {
+	display: none;
+}
+.WS_S_IMPORTANT::before {
+	content: "";
+	width: 3em;
+	height: 2em;
+	background-image: url("../img/image2.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	padding-right: 0.2em;
+	padding-bottom: 0.1em;
+	vertical-align: bottom;
+}
+.WS_S_REFERENCE::before {
+	content: "";
+	width: 3em;
+	height: 2em;
+	background-image: url("../img/image17.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	padding-right: 0.2em;
+	padding-bottom: 0.1em;
+	vertical-align: bottom;
+}
+
+/* --------------------------------
+  テーブルスタイル設定
+-------------------------------- */
+.WS_T_WFS_001,
+.WS_T_WFS_002,
+.WS_T_WFS_003,
+.WS_T_WFS_004,
+.WS_T_WFS_005,
+.WS_T_WFS_101,
+.WS_T_WFS_102 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_WHS_001,
+.WS_T_WHS_002,
+.WS_T_WHS_003,
+.WS_T_WHS_004 {
+	width: 45%;
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_WHS_101,
+.WS_T_WHS_102 {
+	width: 45%;
+	margin: 0 5% 1.1em 50%;
+}
+
+/* 表内に表が配置されている場合のスタイル */
+table .WS_T_WFS_001,
+table .WS_T_WFS_002,
+table .WS_T_WFS_003,
+table .WS_T_WFS_004,
+table .WS_T_WFS_005,
+table .WS_T_WFS_101,
+table .WS_T_WFS_102 {
+	width: 100%;
+	margin: 0.4em auto;
+}
+
+table .WS_T_WHS_001,
+table .WS_T_WHS_002,
+table .WS_T_WHS_003,
+table .WS_T_WHS_004 {
+	width: 50%;
+	margin: 0.4em auto;
+}
+
+table .WS_T_WHS_101,
+table .WS_T_WHS_102 {
+	width: 50%;
+	margin: 0.4em 0 0.4em 50%;
+}
+
+.WS_T_WFS_001>tbody>tr>td,
+.WS_T_WFS_002>tbody>tr>td,
+.WS_T_WFS_003>tbody>tr>td,
+.WS_T_WFS_004>tbody>tr>td,
+.WS_T_WFS_005>tbody>tr>td,
+.WS_T_WFS_101>tbody>tr>td,
+.WS_T_WFS_102>tbody>tr>td,
+.WS_T_WHS_001>tbody>tr>td,
+.WS_T_WHS_002>tbody>tr>td,
+.WS_T_WHS_003>tbody>tr>td,
+.WS_T_WHS_004>tbody>tr>td,
+.WS_T_WHS_101>tbody>tr>td,
+.WS_T_WHS_102>tbody>tr>td {
+	padding: 0.2em 0.4em;
+	max-width: 40em;
+}
+
+.WS_T_WFS_001,
+.WS_T_WFS_002,
+.WS_T_WFS_003,
+.WS_T_WFS_004 {
+	border: 1px solid #999;
+}
+
+.WS_T_WFS_001>tbody>tr>td,
+.WS_T_WFS_002>tbody>tr>td,
+.WS_T_WFS_003>tbody>tr>td,
+.WS_T_WFS_004>tbody>tr>td,
+.WS_T_WFS_101>tbody>tr>td,
+.WS_T_WFS_102>tbody>tr>td,
+.WS_T_WHS_001>tbody>tr>td,
+.WS_T_WHS_002>tbody>tr>td,
+.WS_T_WHS_003>tbody>tr>td,
+.WS_T_WHS_004>tbody>tr>td,
+.WS_T_WHS_101>tbody>tr>td,
+.WS_T_WHS_102>tbody>tr>td {
+	border: 1px solid #999;
+}
+
+.WS_T_WFS_001>tbody>tr:first-child>td,
+.WS_T_WFS_003>tbody>tr:first-child>td,
+.WS_T_WFS_003>tbody>tr:nth-child(2)>td,
+.WS_T_WFS_004>tbody>tr:first-child>td,
+.WS_T_WFS_004>tbody>tr:nth-child(2)>td,
+.WS_T_WFS_004>tbody>tr:nth-child(3)>td,
+.WS_T_WFS_101>tbody>tr:nth-child(2)>td,
+.WS_T_WHS_001>tbody>tr:first-child>td,
+.WS_T_WHS_003>tbody>tr:first-child>td,
+.WS_T_WHS_003>tbody>tr:nth-child(2)>td,
+.WS_T_WHS_004>tbody>tr:first-child>td,
+.WS_T_WHS_004>tbody>tr:nth-child(2)>td,
+.WS_T_WHS_004>tbody>tr:nth-child(3)>td,
+.WS_T_WHS_101>tbody>tr:first-child>td {
+	background-color: #ccc;
+/*	font-weight: bold;
+	text-align: center;*/
+	vertical-align: middle;
+/*	white-space: nowrap;*/
+}
+
+.WS_T_WFS_003>tbody>tr:nth-child(2)>td,
+.WS_T_WFS_004>tbody>tr:nth-child(2)>td,
+.WS_T_WFS_004>tbody>tr:nth-child(3)>td,
+.WS_T_WFS_101>tbody>tr:nth-child(2)>td,
+.WS_T_WHS_003>tbody>tr:nth-child(2)>td,
+.WS_T_WHS_004>tbody>tr:nth-child(2)>td,
+.WS_T_WHS_004>tbody>tr:nth-child(3)>td {
+	background-color: #ccc;
+/*	font-weight: bold;
+	text-align: center;*/
+	vertical-align: middle;
+/*	white-space: nowrap;*/
+}
+
+.WS_T_WFS_005>tbody>tr>td,
+.WS_T_WFS_101>tbody>tr:first-child>td,
+.WS_T_WFS_102>tbody>tr:first-child>td {
+	border: none;
+}
+
+/* 表内の文字サイズ調整 */
+/*.WS_T_WFS_001 td,
+.WS_T_WFS_002 td,
+.WS_T_WFS_003 td,
+.WS_T_WFS_004 td,
+.WS_T_WFS_005 td,
+.WS_T_WFS_101 td,
+.WS_T_WFS_102 td,
+.WS_T_WHS_001 td,
+.WS_T_WHS_002 td,
+.WS_T_WHS_003 td,
+.WS_T_WHS_004 td {
+	font-size: 0.88em;
+}*/
+
+/* 文字サイズ調整をした表内に特定の表が配置されている場合の文字サイズ調整 */
+/*.WS_T_WFS_001 .WS_T_WFS_001 td,
+.WS_T_WFS_001 .WS_T_WFS_002 td,
+.WS_T_WFS_001 .WS_T_WFS_003 td,
+.WS_T_WFS_001 .WS_T_WFS_004 td,
+.WS_T_WFS_001 .WS_T_WFS_005 td,
+.WS_T_WFS_001 .WS_T_WFS_101 td,
+.WS_T_WFS_001 .WS_T_WFS_102 td,
+.WS_T_WFS_001 .WS_T_WHS_001 td,
+.WS_T_WFS_001 .WS_T_WHS_002 td,
+.WS_T_WFS_001 .WS_T_WHS_003 td,
+.WS_T_WFS_001 .WS_T_WHS_004 td,
+.WS_T_WFS_002 .WS_T_WFS_001 td,
+.WS_T_WFS_002 .WS_T_WFS_002 td,
+.WS_T_WFS_002 .WS_T_WFS_003 td,
+.WS_T_WFS_002 .WS_T_WFS_004 td,
+.WS_T_WFS_002 .WS_T_WFS_005 td,
+.WS_T_WFS_002 .WS_T_WFS_101 td,
+.WS_T_WFS_002 .WS_T_WFS_102 td,
+.WS_T_WFS_002 .WS_T_WHS_001 td,
+.WS_T_WFS_002 .WS_T_WHS_002 td,
+.WS_T_WFS_002 .WS_T_WHS_003 td,
+.WS_T_WFS_002 .WS_T_WHS_004 td,
+.WS_T_WFS_003 .WS_T_WFS_001 td,
+.WS_T_WFS_003 .WS_T_WFS_002 td,
+.WS_T_WFS_003 .WS_T_WFS_003 td,
+.WS_T_WFS_003 .WS_T_WFS_004 td,
+.WS_T_WFS_003 .WS_T_WFS_005 td,
+.WS_T_WFS_003 .WS_T_WFS_101 td,
+.WS_T_WFS_003 .WS_T_WFS_102 td,
+.WS_T_WFS_003 .WS_T_WHS_001 td,
+.WS_T_WFS_003 .WS_T_WHS_002 td,
+.WS_T_WFS_003 .WS_T_WHS_003 td,
+.WS_T_WFS_003 .WS_T_WHS_004 td,
+.WS_T_WFS_004 .WS_T_WFS_001 td,
+.WS_T_WFS_004 .WS_T_WFS_002 td,
+.WS_T_WFS_004 .WS_T_WFS_003 td,
+.WS_T_WFS_004 .WS_T_WFS_004 td,
+.WS_T_WFS_004 .WS_T_WFS_005 td,
+.WS_T_WFS_004 .WS_T_WFS_101 td,
+.WS_T_WFS_004 .WS_T_WFS_102 td,
+.WS_T_WFS_004 .WS_T_WHS_001 td,
+.WS_T_WFS_004 .WS_T_WHS_002 td,
+.WS_T_WFS_004 .WS_T_WHS_003 td,
+.WS_T_WFS_004 .WS_T_WHS_004 td,
+.WS_T_WFS_005 .WS_T_WFS_001 td,
+.WS_T_WFS_005 .WS_T_WFS_002 td,
+.WS_T_WFS_005 .WS_T_WFS_003 td,
+.WS_T_WFS_005 .WS_T_WFS_004 td,
+.WS_T_WFS_005 .WS_T_WFS_005 td,
+.WS_T_WFS_005 .WS_T_WFS_101 td,
+.WS_T_WFS_005 .WS_T_WFS_102 td,
+.WS_T_WFS_005 .WS_T_WHS_001 td,
+.WS_T_WFS_005 .WS_T_WHS_002 td,
+.WS_T_WFS_005 .WS_T_WHS_003 td,
+.WS_T_WFS_005 .WS_T_WHS_004 td,
+.WS_T_WFS_101 .WS_T_WFS_001 td,
+.WS_T_WFS_101 .WS_T_WFS_002 td,
+.WS_T_WFS_101 .WS_T_WFS_003 td,
+.WS_T_WFS_101 .WS_T_WFS_004 td,
+.WS_T_WFS_101 .WS_T_WFS_005 td,
+.WS_T_WFS_101 .WS_T_WFS_101 td,
+.WS_T_WFS_101 .WS_T_WFS_102 td,
+.WS_T_WFS_101 .WS_T_WHS_001 td,
+.WS_T_WFS_101 .WS_T_WHS_002 td,
+.WS_T_WFS_101 .WS_T_WHS_003 td,
+.WS_T_WFS_101 .WS_T_WHS_004 td,
+.WS_T_WFS_102 .WS_T_WFS_001 td,
+.WS_T_WFS_102 .WS_T_WFS_002 td,
+.WS_T_WFS_102 .WS_T_WFS_003 td,
+.WS_T_WFS_102 .WS_T_WFS_004 td,
+.WS_T_WFS_102 .WS_T_WFS_005 td,
+.WS_T_WFS_102 .WS_T_WFS_101 td,
+.WS_T_WFS_102 .WS_T_WFS_102 td,
+.WS_T_WFS_102 .WS_T_WHS_001 td,
+.WS_T_WFS_102 .WS_T_WHS_002 td,
+.WS_T_WFS_102 .WS_T_WHS_003 td,
+.WS_T_WFS_102 .WS_T_WHS_004 td,
+.WS_T_WHS_001 .WS_T_WFS_001 td,
+.WS_T_WHS_001 .WS_T_WFS_002 td,
+.WS_T_WHS_001 .WS_T_WFS_003 td,
+.WS_T_WHS_001 .WS_T_WFS_004 td,
+.WS_T_WHS_001 .WS_T_WFS_005 td,
+.WS_T_WHS_001 .WS_T_WFS_101 td,
+.WS_T_WHS_001 .WS_T_WFS_102 td,
+.WS_T_WHS_001 .WS_T_WHS_001 td,
+.WS_T_WHS_001 .WS_T_WHS_002 td,
+.WS_T_WHS_001 .WS_T_WHS_003 td,
+.WS_T_WHS_001 .WS_T_WHS_004 td,
+.WS_T_WHS_002 .WS_T_WFS_001 td,
+.WS_T_WHS_002 .WS_T_WFS_002 td,
+.WS_T_WHS_002 .WS_T_WFS_003 td,
+.WS_T_WHS_002 .WS_T_WFS_004 td,
+.WS_T_WHS_002 .WS_T_WFS_005 td,
+.WS_T_WHS_002 .WS_T_WFS_101 td,
+.WS_T_WHS_002 .WS_T_WFS_102 td,
+.WS_T_WHS_002 .WS_T_WHS_001 td,
+.WS_T_WHS_002 .WS_T_WHS_002 td,
+.WS_T_WHS_002 .WS_T_WHS_003 td,
+.WS_T_WHS_002 .WS_T_WHS_004 td,
+.WS_T_WHS_003 .WS_T_WFS_001 td,
+.WS_T_WHS_003 .WS_T_WFS_002 td,
+.WS_T_WHS_003 .WS_T_WFS_003 td,
+.WS_T_WHS_003 .WS_T_WFS_004 td,
+.WS_T_WHS_003 .WS_T_WFS_005 td,
+.WS_T_WHS_003 .WS_T_WFS_101 td,
+.WS_T_WHS_003 .WS_T_WFS_102 td,
+.WS_T_WHS_003 .WS_T_WHS_001 td,
+.WS_T_WHS_003 .WS_T_WHS_002 td,
+.WS_T_WHS_003 .WS_T_WHS_003 td,
+.WS_T_WHS_003 .WS_T_WHS_004 td,
+.WS_T_WHS_004 .WS_T_WFS_001 td,
+.WS_T_WHS_004 .WS_T_WFS_002 td,
+.WS_T_WHS_004 .WS_T_WFS_003 td,
+.WS_T_WHS_004 .WS_T_WFS_004 td,
+.WS_T_WHS_004 .WS_T_WFS_005 td,
+.WS_T_WHS_004 .WS_T_WFS_101 td,
+.WS_T_WHS_004 .WS_T_WFS_102 td,
+.WS_T_WHS_004 .WS_T_WHS_001 td,
+.WS_T_WHS_004 .WS_T_WHS_002 td,
+.WS_T_WHS_004 .WS_T_WHS_003 td,
+.WS_T_WHS_004 .WS_T_WHS_004 td {
+	font-size: 1em;
+}*/
+
+/* 文字サイズ調整をした表内に上記以外の表が配置されている場合の文字サイズ調整 */
+/*.WS_T_WFS_001 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WFS_002 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WFS_003 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WFS_004 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WFS_005 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WFS_101 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WFS_102 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WHS_001 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WHS_002 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WHS_003 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td,
+.WS_T_WHS_004 table:not(.WS_T_WFS_001):not(.WS_T_WFS_002):not(.WS_T_WFS_003):not(.WS_T_WFS_004):not(.WS_T_WFS_005):not(.WS_T_WFS_101):not(.WS_T_WFS_102):not(.WS_T_WHS_001):not(.WS_T_WHS_002):not(.WS_T_WHS_003):not(.WS_T_WHS_004) td {
+	font-size: 1.14em;
+}*/
+
+/* 表キャプションのスタイル設定 */
+.WS_T_TITLE {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: center;
+	margin: 1.6em 0 0.1em;
+}
+
+table .WS_T_TITLE {
+	margin: 1.6em 0 0.3em;
+}
+
+
+/* --------------------------------
+  ヘッダーテーブルスタイル設定
+-------------------------------- */
+.WS_T_HEAD_01,
+.WS_T_HEAD_02 {
+	width: 100%;
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_HEAD_01,
+.WS_T_HEAD_02 {
+	border: 1px solid #999;
+}
+
+.WS_T_HEAD_01>tbody>tr>td,
+.WS_T_HEAD_02>tbody>tr>td {
+	border: 1px solid #999;
+	padding: 0.2em 0.4em;
+}
+
+.WS_T_HEAD_01>tbody>tr>td:first-child {
+	width: 8em;
+}
+/*.WS_T_HEAD_01>tbody>tr>td:nth-child(2) {
+	width: 40%;
+}*/
+.WS_T_HEAD_01>tbody>tr>td:nth-child(3) {
+	width: 7em;
+}
+.WS_T_HEAD_01>tbody>tr>td:last-child {
+	width: 10em;
+}
+
+/*.WS_T_HEAD_02>tbody>tr>td:first-child {
+	width: 75%;
+}*/
+.WS_T_HEAD_02>tbody>tr>td:last-child {
+	width: 10em;
+}
+
+
+/* --------------------------------
+  メモテーブルスタイル設定
+-------------------------------- */
+.WS_T_MEMO_01,
+.WS_T_MEMO_02,
+.WS_T_MEMO_03,
+.WS_T_MEMO02 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_MEMO_01>tbody>tr>td,
+.WS_T_MEMO_02>tbody>tr>td,
+.WS_T_MEMO_03>tbody>tr>td,
+.WS_T_MEMO02>tbody>tr>td {
+	padding: 0.4em 0.8em;
+}
+
+.WS_T_MEMO_01>tbody>tr>td:first-child {
+	padding: 0.4em;
+	width: 20.4em;
+}
+/*.WS_T_MEMO_01>tbody>tr>td:last-child {
+	width: 80%;
+}*/
+
+.WS_T_MEMO_02,
+.WS_T_MEMO02{
+	border: 2px solid #4d8000;
+	background-color: #d6e9ca;
+}
+
+.WS_T_MEMO_03 {
+	border: 2px solid #9e3d3f;
+	background-color: #f8f4e6;
+}
+
+.WS_T_MEMO_01 p,
+.WS_T_MEMO_02 p,
+.WS_T_MEMO_03 p,
+.WS_T_MEMO02 p {
+	font-weight: bold;
+}
+
+
+/* --------------------------------
+  履歴テーブルスタイル設定
+-------------------------------- */
+.WS_T_HISTORY_01,
+.WS_T_HISTORY_02 {
+	width: 100%;
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_HISTORY_01,
+.WS_T_HISTORY_02 {
+	border: 1px solid #999;
+}
+
+.WS_T_HISTORY_01>tbody>tr>td,
+.WS_T_HISTORY_02>tbody>tr>td {
+	border: 1px solid #999;
+	padding: 0.2em 0.4em;
+}
+
+.WS_T_HISTORY_01>tbody>tr>td:first-child,
+.WS_T_HISTORY_01>tbody>tr>td:nth-child(3),
+.WS_T_HISTORY_01>tbody>tr>td:nth-child(4),
+.WS_T_HISTORY_01>tbody>tr>td:last-child {
+	width: 4em;
+}
+/*.WS_T_HISTORY_01>tbody>tr>td:first-child(2) {
+	width: 60%;
+}*/
+
+.WS_T_HISTORY_02>tbody>tr>td:first-child,
+.WS_T_HISTORY_02>tbody>tr>td:nth-child(3),
+.WS_T_HISTORY_02>tbody>tr>td:nth-child(4) {
+	width: 4em;
+}
+.WS_T_HISTORY_02>tbody>tr>td:nth-child(2) {
+	width: 6em;
+}
+/*.WS_T_HISTORY_02>tbody>tr>td:last-child {
+	width: 55%;
+}*/
+
+/* --------------------------------
+  PLスタイル設定
+-------------------------------- */
+.WS_T_PL001,
+.WS_T_PL002,
+.WS_T_PL003,
+.WS_T_PL004 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+}
+
+/* 表内にPLが配置されている場合のスタイル */
+table .WS_T_PL001,
+table .WS_T_PL002,
+table .WS_T_PL003,
+table .WS_T_PL004 {
+	width: 100%;
+	margin: 0 auto 0.4em;
+}
+
+.WS_T_PL001>tbody>tr:first-child>td,
+.WS_T_PL002>tbody>tr:first-child>td,
+.WS_T_PL003>tbody>tr:first-child>td {
+	padding: 0.1em 0 0.1em 0.8em;
+	line-height: 1.2;
+	display: block;
+}
+
+/* 危険のPL表スタイル設定 */
+.WS_T_PL001>tbody>tr:first-child>td {
+	background-color: #ffb7db;
+	border-top: 1px solid #ff7fbf;
+	border-bottom: 1px solid #ff7fbf;
+}
+
+.WS_T_PL001>tbody>tr:last-child>td {
+	background-color: #fff4f9;
+	border-bottom: 1px solid #ff7fbf;
+	padding: 0.8em 0.4em 0.4em;
+}
+
+/* 警告のPL表スタイル設定 */
+.WS_T_PL002>tbody>tr:first-child>td {
+	background-color: #ffb7b7;
+	border-top: 1px solid #ff7f7f;
+	border-bottom: 1px solid #ff7f7f;
+}
+
+.WS_T_PL002>tbody>tr:last-child>td {
+	background-color: #fff4f4;
+	border-bottom: 1px solid #ff7f7f;
+	padding: 0.8em 0.4em 0.4em;
+}
+
+/* 注意のPL表スタイル設定 */
+.WS_T_PL003>tbody>tr:first-child>td {
+	background-color: #ffdbb7;
+	border-top: 1px solid #ffbf7f;
+	border-bottom: 1px solid #ffbf7f;
+}
+
+.WS_T_PL003>tbody>tr:last-child>td {
+	background-color: #fff9f4;
+	border-bottom: 1px solid #ffbf7f;
+	padding: 0.8em 0.4em 0.4em;
+}
+
+/* 注のPL表スタイル設定 */
+.WS_T_PL004>tbody>tr:first-child>td {
+	padding: 0.2em 0 0 1.2em;
+/*	text-align: left;
+	font-size: 1.1em;
+	font-weight: bold;*/
+	line-height: 1.2;
+	display: block;
+	background-color: #ffffb7;
+	border-top: 1px solid #ffff7f;
+	border-bottom: 1px solid #ffff7f;
+}
+
+.WS_T_PL004>tbody>tr:last-child>td {
+	background-color: #fffff4;
+	border-bottom: 1px solid #ffff7f;
+	padding: 0.8em 0.4em 0.4em;
+}
+
+/* PL表内の表のスタイル設定 */
+table.WS_T_PL001 .WS_T_WFS_001,
+table.WS_T_PL001 .WS_T_WFS_002,
+table.WS_T_PL001 .WS_T_WFS_003,
+table.WS_T_PL001 .WS_T_WFS_004,
+table.WS_T_PL001 .WS_T_WFS_005,
+table.WS_T_PL001 .WS_T_WFS_101,
+table.WS_T_PL001 .WS_T_WFS_102,
+table.WS_T_PL002 .WS_T_WFS_001,
+table.WS_T_PL002 .WS_T_WFS_002,
+table.WS_T_PL002 .WS_T_WFS_003,
+table.WS_T_PL002 .WS_T_WFS_004,
+table.WS_T_PL002 .WS_T_WFS_005,
+table.WS_T_PL002 .WS_T_WFS_101,
+table.WS_T_PL002 .WS_T_WFS_102,
+table.WS_T_PL003 .WS_T_WFS_001,
+table.WS_T_PL003 .WS_T_WFS_002,
+table.WS_T_PL003 .WS_T_WFS_003,
+table.WS_T_PL003 .WS_T_WFS_004,
+table.WS_T_PL003 .WS_T_WFS_005,
+table.WS_T_PL003 .WS_T_WFS_101,
+table.WS_T_PL003 .WS_T_WFS_102,
+table.WS_T_PL004 .WS_T_WFS_001,
+table.WS_T_PL004 .WS_T_WFS_002,
+table.WS_T_PL004 .WS_T_WFS_003,
+table.WS_T_PL004 .WS_T_WFS_004,
+table.WS_T_PL004 .WS_T_WFS_005,
+table.WS_T_PL004 .WS_T_WFS_101,
+table.WS_T_PL004 .WS_T_WFS_102 {
+	width: 95%;
+	margin: 0.4em auto;
+}
+
+table.WS_T_PL001 .WS_T_WHS_001,
+table.WS_T_PL001 .WS_T_WHS_002,
+table.WS_T_PL001 .WS_T_WHS_003,
+table.WS_T_PL001 .WS_T_WHS_004,
+table.WS_T_PL002 .WS_T_WHS_001,
+table.WS_T_PL002 .WS_T_WHS_002,
+table.WS_T_PL002 .WS_T_WHS_003,
+table.WS_T_PL002 .WS_T_WHS_004,
+table.WS_T_PL003 .WS_T_WHS_001,
+table.WS_T_PL003 .WS_T_WHS_002,
+table.WS_T_PL003 .WS_T_WHS_003,
+table.WS_T_PL003 .WS_T_WHS_004,
+table.WS_T_PL004 .WS_T_WHS_001,
+table.WS_T_PL004 .WS_T_WHS_002,
+table.WS_T_PL004 .WS_T_WHS_003,
+table.WS_T_PL004 .WS_T_WHS_004 {
+	width: 48%;
+	margin: 0.4em auto;
+}
+
+.WS_T_ALERT_01 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_ALERT_01 {
+	border: 1px solid #999;
+}
+
+.WS_T_ALERT_01>tbody>tr>td {
+	padding: 0.2em 0.4em;
+}
+
+.WS_T_ALERT_01>tbody>tr>td:last-child {
+	border-left: 1px solid #999;
+}
+.WS_T_ALERT_01>tbody>tr:first-child>td:last-child {
+	border-bottom: 1px solid #999;
+	background-color: #fff1cf;
+}
+.WS_T_ALERT_01>tbody>tr:first-child>td:first-child {
+	width: 8em;
+}
+
+/* PL見出しのビュレットを非表示にする */
+/*.WS_P_ALERT .WS_HEADLINE,
+.WS_P_ALERT_WHITE .WS_HEADLINE {
+	display: none;
+}*/
+
+/* PL表のアラートマーク付き文字スタイル設定 */
+.WS_P_ALERT,
+.WS_P_ALERT_WHITE {
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #000;
+	line-height: 1.2;
+	padding-left: 0.2em;
+}
+.WS_P_ALERT::before,
+.WS_P_ALERT_WHITE::before {
+	content: "";
+	width: 2em;
+	height: 1.4em;
+	background-image: url("../img_common/icon_alert.png");
+	background-repeat: no-repeat;
+	background-size: contain ;
+	/*	background-position: 0.8em 2em;*/
+	display: inline-block;
+	padding-right: 0.2em;
+	padding-bottom: 0.1em;
+	vertical-align: -30%;
+}
+
+/* PL表の文字スタイルを無効にする設定 */
+.WS_T_PL004>tbody>tr:first-child>td .WS_C_WHITE_B {
+	color: #000;
+}
+
+.WS_T_PL001>tbody>tr:first-child>td .WS_P_C,
+.WS_T_PL002>tbody>tr:first-child>td .WS_P_C,
+.WS_T_PL003>tbody>tr:first-child>td .WS_P_C {
+	text-align: left;
+}
+
+.WS_T_PL004>tbody>tr:first-child>td .WS_P_C {
+	text-align: left;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #000;
+	line-height: 1.6;
+	height: 27px;
+	padding-left: 0.2em;
+}
+
+
+/* --------------------------------
+  MTスタイル設定
+-------------------------------- */
+/* MT表組スタイルの設定（表組は不使用） */
+.WS_T_TM001,
+.WS_T_TM002 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+}
+
+/* 表内にMTが配置されている場合のスタイル */
+table .WS_T_TM001,
+table .WS_T_TM002 {
+	width: 100%;
+	margin: 0 auto 0.4em;
+}
+
+.WS_T_TM001>tbody>tr:first-child>td,
+.WS_T_TM002>tbody>tr:first-child>td {
+	padding: 0.2em 0 0 1.6em;
+/*	text-align: left;*/
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 1.4;
+	border-top: 1px dashed #999;
+	border-bottom: 1px dashed #999;
+}
+
+.WS_T_TM001>tbody>tr:first-child>td {
+	background-color: #ccc;
+}
+
+.WS_T_TM002>tbody>tr:first-child>td {
+	background-color: none;
+}
+
+.WS_T_TM001>tbody>tr:last-child>td, 
+.WS_T_TM002>tbody>tr:last-child>td {
+	border-bottom: 1px dashed #999;
+	background-color: none;
+	padding: 0.8em 0.4em 0.4em;
+}
+
+/* MT見出し段落スタイルの設定 */
+.WS_TM_T001,
+.WS_TM_M001,
+.WS_TM_END001 {
+	border-top: 1px dashed #999;
+}
+
+/* Tマーク付きの段落スタイル設定 */
+.WS_TM_T001::before {
+	content: "";
+	width: 3em;
+	height: 1.4em;
+	background-image: url("../img_common/icon_t.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	margin-top: 0.2em;
+	padding-right: 0.2em;
+	padding-bottom: 0.1em;
+	vertical-align: middle;
+}
+
+/* Mマーク付きの段落スタイル設定 */
+.WS_TM_M001::before {
+	content: "";
+	width: 3em;
+	height: 1.4em;
+	background-image: url("../img_common/icon_m.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: block;
+	margin-top: 0.2em;
+	padding-right: 0.2em;
+	padding-bottom: 0.1em;
+	vertical-align: middle;
+}
+
+/* MT見出しのビュレットを非表示にする */
+.WS_TM_T001 .WS_HEADLINE,
+.WS_TM_M001 .WS_HEADLINE {
+	display: none;
+}
+
+
+/* --------------------------------
+  画像ボックススタイル設定
+-------------------------------- */
+.WS_PIC_1,
+.WS_PIC_3,
+.WS_PIC_4,
+.WS_PIC_5,
+.WS_PIC_7,
+.WS_PIC_8 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+	table-layout: fixed;
+}
+
+.WS_PIC_2,
+.WS_PIC_6 {
+	width: 45%;
+	margin: 0 auto 1.1em;
+	table-layout: fixed;
+}
+
+/* 表内に画像ボックスが配置されている場合のスタイル */
+table .WS_PIC_1,
+table .WS_PIC_3,
+table .WS_PIC_4,
+table .WS_PIC_5,
+table .WS_PIC_7,
+table .WS_PIC_8 {
+	width: 100%;
+	margin: 0 auto 0.4em;
+	table-layout: fixed;
+}
+
+table .WS_PIC_2,
+table .WS_PIC_6 {
+	width: 50%;
+	margin: 0 auto 0.4em;
+	table-layout: fixed;
+}
+
+.WS_PIC_1>tbody>tr>td,
+.WS_PIC_2>tbody>tr>td,
+.WS_PIC_3>tbody>tr>td,
+.WS_PIC_4>tbody>tr>td,
+.WS_PIC_5>tbody>tr>td,
+.WS_PIC_6>tbody>tr>td,
+.WS_PIC_7>tbody>tr>td {
+	padding: 0.4em;;
+}
+
+.WS_PIC_1,
+.WS_PIC_2,
+.WS_PIC_3,
+.WS_PIC_4,
+.WS_PIC_5,
+.WS_PIC_6 {
+	border: 1px solid #999;
+}
+
+.WS_PIC_1>tbody>tr>td,
+.WS_PIC_2>tbody>tr>td,
+.WS_PIC_7>tbody>tr>td {
+	border: none;
+}
+
+.WS_PIC_3>tbody>tr>td,
+.WS_PIC_6>tbody>tr>td {
+	border: 1px solid #999;
+}
+
+.WS_PIC_4>tbody>tr>td {
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.WS_PIC_5>tbody>tr>td {
+	border-right: 1px solid #999;
+	border-left: 1px solid #999;
+}
+
+/* 記号説明リストのスタイル設定 */
+.WS_PIC_8 {
+	margin-top: -1.1em;
+}
+
+/* 表内の記号説明リストのスタイル設定 */
+table .WS_PIC_8 {
+	margin-top: -0.4em;
+}
+
+.WS_PIC_8>tbody>tr>td {
+	padding: 0.1em 0.2em;
+	border: 1px solid #999;
+}
+
+/* 1行目の上側の罫線を表示しない */
+.WS_PIC_8>tbody>tr:first-child>td {
+	border-top: none;
+}
+
+/* 奇数列は幅を4emに固定し、中央揃えにする */
+.WS_PIC_8>tbody>tr>td:nth-child(odd) {
+	text-align: center;
+	width: 4em;
+}
+
+.WS_T_FIG_01,
+.WS_T_FIG_02,
+.WS_T_FIG_03 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+	table-layout: fixed;
+}
+
+.WS_T_FIG_01,
+.WS_T_FIG_02,
+.WS_T_FIG_03 {
+	margin: 0 auto 1.1em;
+}
+
+.WS_T_FIG_03 {
+	border: 1px solid #999;
+}
+
+.WS_T_FIG_01 img,
+.WS_T_FIG_02 img,
+.WS_T_FIG_03 img {
+	max-width: 100%;
+}
+
+.WS_T_FIG_01>tbody>tr>td,
+.WS_T_FIG_02>tbody>tr>td,
+.WS_T_FIG_03>tbody>tr>td {
+	padding: 0.4em;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.WS_P_C_FIGANC {
+	text-align: center;
+}
+P.WS_P_C_FIGANC img {
+	max-width: 100%;
+	margin: 5px auto 0px;
+}
+
+/* 画像キャプションのスタイル設定 */
+.WS_F_TITLE {
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: center;
+	margin: -0.8em 0 1.6em;
+}
+
+table p.WS_F_TITLE {
+	margin: 0.3em 0 1.6em;
+}
+
+
+/* --------------------------------
+  パラメータスタイル設定
+-------------------------------- */
+/* パラメータ部のスタイル設定 */
+.WS_P_PARAM_01 {
+	text-align: center;
+	font-weight: bold;
+}
+
+/* パラメータ部ビット、ワードのスタイル設定 */
+.WS_T_PARAM_BIT_01,
+.WS_T_PARAM_BIT_02,
+.WS_T_PARAM_BIT_03,
+.WS_T_PARAM_BYTE_01,
+.WS_T_PARAM_BYTE_02,
+.WS_T_PARAM_BYTE_03 {
+	width: 90%;
+	margin: 1.1em auto 2.4em;
+	table-layout: fixed;
+}
+
+/* 表内にパラメータ部が配置されている場合のスタイル */
+table .WS_T_PARAM_BIT_01,
+table .WS_T_PARAM_BIT_02,
+table .WS_T_PARAM_BIT_03,
+table .WS_T_PARAM_BYTE_01,
+table .WS_T_PARAM_BYTE_02,
+table .WS_T_PARAM_BYTE_03 {
+	width: 100%;
+	margin: 0.4em auto;
+	table-layout: fixed;
+}
+
+.WS_T_PARAM_BIT_01>tbody>tr>td,
+.WS_T_PARAM_BIT_02>tbody>tr>td,
+.WS_T_PARAM_BIT_03>tbody>tr>td,
+.WS_T_PARAM_BYTE_01>tbody>tr>td,
+.WS_T_PARAM_BYTE_02>tbody>tr>td,
+.WS_T_PARAM_BYTE_03>tbody>tr>td {
+	border: 1px solid #999;
+}
+
+.WS_T_PARAM_BIT_01>tbody>tr:first-child>td,
+.WS_T_PARAM_BIT_02>tbody>tr:first-child>td,
+.WS_T_PARAM_BIT_03>tbody>tr:first-child>td,
+.WS_T_PARAM_BIT_03>tbody>tr:nth-child(3)>td,
+.WS_T_PARAM_BYTE_03>tbody>tr:nth-child(2)>td {
+	border: none;
+}
+
+.WS_T_PARAM_BIT_01>tbody>tr:nth-child(2)>td:nth-child(2),
+.WS_T_PARAM_BIT_01>tbody>tr:nth-child(2)>td:last-child,
+.WS_T_PARAM_BIT_02>tbody>tr:nth-child(2)>td:nth-child(2),
+.WS_T_PARAM_BIT_02>tbody>tr:nth-child(2)>td:last-child,
+.WS_T_PARAM_BIT_02>tbody>tr:nth-child(3)>td:first-child,
+.WS_T_PARAM_BIT_02>tbody>tr:nth-child(3)>td:last-child,
+.WS_T_PARAM_BIT_03>tbody>tr:nth-child(2)>td:nth-child(2),
+.WS_T_PARAM_BIT_03>tbody>tr:nth-child(2)>td:last-child,
+.WS_T_PARAM_BIT_03>tbody>tr:nth-child(4)>td:nth-child(2),
+.WS_T_PARAM_BIT_03>tbody>tr:nth-child(4)>td:last-child {
+	border: none;
+}
+
+.WS_T_PARAM_BYTE_01>tbody>tr:first-child>td:nth-child(2),
+.WS_T_PARAM_BYTE_01>tbody>tr:first-child>td:last-child,
+.WS_T_PARAM_BYTE_02>tbody>tr:first-child>td:nth-child(2),
+.WS_T_PARAM_BYTE_02>tbody>tr:first-child>td:last-child,
+.WS_T_PARAM_BYTE_02>tbody>tr:nth-child(2)>td:first-child,
+.WS_T_PARAM_BYTE_02>tbody>tr:nth-child(2)>td:last-child,
+.WS_T_PARAM_BYTE_03>tbody>tr:first-child>td:nth-child(2),
+.WS_T_PARAM_BYTE_03>tbody>tr:first-child>td:last-child,
+.WS_T_PARAM_BYTE_03>tbody>tr:last-child>td:nth-child(2),
+.WS_T_PARAM_BYTE_03>tbody>tr:last-child>td:last-child {
+	border: none;
+}
+
+.WS_T_PARAM_BIT_01>tbody>tr>td:first-child,
+.WS_T_PARAM_BIT_02>tbody>tr>td:first-child,
+.WS_T_PARAM_BIT_03>tbody>tr>td:first-child,
+.WS_T_PARAM_BYTE_01>tbody>tr>td:first-child,
+.WS_T_PARAM_BYTE_02>tbody>tr>td:first-child,
+.WS_T_PARAM_BYTE_03>tbody>tr>td:first-child {
+	width: 6em;
+}
+.WS_T_PARAM_BIT_01>tbody>tr>td:nth-child(2),
+.WS_T_PARAM_BIT_02>tbody>tr>td:nth-child(2),
+.WS_T_PARAM_BIT_03>tbody>tr>td:nth-child(2),
+.WS_T_PARAM_BYTE_01>tbody>tr>td:nth-child(2),
+.WS_T_PARAM_BYTE_02>tbody>tr>td:nth-child(2),
+.WS_T_PARAM_BYTE_03>tbody>tr>td:nth-child(2) {
+	width: 1em;
+}
+.WS_T_PARAM_BIT_01>tbody>tr>td:last-child,
+.WS_T_PARAM_BIT_02>tbody>tr>td:last-child,
+.WS_T_PARAM_BIT_03>tbody>tr>td:last-child,
+.WS_T_PARAM_BYTE_01>tbody>tr>td:last-child,
+.WS_T_PARAM_BYTE_02>tbody>tr>td:last-child,
+.WS_T_PARAM_BYTE_03>tbody>tr>td:last-child {
+	width: 2em;
+}
+
+/* パラメータ部入力区分のスタイル設定 */
+.WS_T_PARAM_UNIT_01,
+.WS_T_PARAM_UNIT_02,
+.WS_T_PARAM_UNIT_03 {
+	width: 90%;
+	margin: 1.1em auto 2.4em;
+}
+
+.WS_T_PARAM_UNIT_01>tbody>tr>td,
+.WS_T_PARAM_UNIT_02>tbody>tr>td,
+.WS_T_PARAM_UNIT_03>tbody>tr>td {
+	vertical-align: top;
+}
+.WS_T_PARAM_UNIT_01>tbody>tr>td:first-child,
+.WS_T_PARAM_UNIT_02>tbody>tr>td:first-child,
+.WS_T_PARAM_UNIT_03>tbody>tr>td:first-child {
+	width: 7em;
+}
+
+
+/* --------------------------------
+  文字装飾スタイル設定
+-------------------------------- */
+/* ボールドスタイル */
+.WS_C_B,
+.WS_BOLD {
+	font-weight: bold;
+}
+
+/* 機種名の"i"を表すスタイル */
+.WS_C_NAME_I {
+	font-family: Book Antiqua;
+	font-style: italic;
+}
+
+/* イタリックスタイル */
+.WS_C_I,
+.WS_ITALIC {
+	font-style: italic;
+/*	width: 0.25em !important;
+	position: initial !important;*/
+	font-family: Times New Roman,"ＭＳ Ｐゴシック";
+}
+
+/* ボールドイタリックスタイル */
+.WS_C_B_I {
+	font-weight: bold;
+	font-style: italic;
+/*	width: 0.25em !important;
+	position: initial !important;*/
+	font-family: Times New Roman,"ＭＳ Ｐゴシック";
+}
+
+/* 上付き文字スタイル */
+.WS_C_SUP,
+.WS_SUP {
+	font-size: 0.75em;
+	vertical-align: top;
+	position: relative;
+	top: -0.1em;
+}
+
+/* 下付き文字スタイル */
+.WS_C_SUB,
+.WS_SUB {
+	font-size: 0.75em;
+	vertical-align: bottom;
+	position: relative;
+	top: 0.1em;
+}
+
+/* アンダーラインスタイル */
+.WS_C_U,
+.WS_U {
+	text-decoration: underline;
+}
+
+/* ボールドアンダーラインスタイル */
+.WS_C_B_U {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* 白文字スタイル */
+.WS_C_WHITE {
+	color: #fff;
+}
+
+/* ボールドの白文字スタイル */
+.WS_C_WHITE_B {
+	font-weight: bold;
+	color: #fff;
+}
+
+/* 日本語フォントスタイル */
+.WS_C_JP {
+	font-family: Meiryo, 'メイリオ';
+}
+
+/* 文字色スタイル */
+.WS_C_FF0000 {
+	color: #ff0000;			/* 赤 */
+}
+.WS_C_0000FF {
+	color: #0000ff;			/* 青 */
+}
+
+/* 囲み枠スタイル */
+.WS_C_BOX {
+	border: 1px solid #000;
+}
+
+/* ハイライトスタイル */
+.WS_C_BGFFFF00 {
+	background-color: #ffff00;			/* 黄 */
+}
+
+.WS_C_BOX_BGFFFF00 {
+	border: 1px solid #000;
+	background-color: #ffff00;			/* 黄 */
+}
+
+/* --------------------------------
+  NCプログラム用スタイル設定
+-------------------------------- */
+.WS_T_NC_001 {
+	width: 90%;
+	margin: 0 auto 1.1em;
+	table-layout: fixed;
+}
+
+.WS_T_NC_001>tbody>tr>td {
+	vertical-align: top;
+	padding: 0.2em 0.4em;
+}
+
+.WS_T_NC_001>tbody>tr:first-child>td {
+	background-color: #ccc;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+.WS_T_NC_001>tbody>tr>td {
+	border: none;
+}
+
+/* 番号のセルを4emに固定する */
+.WS_T_NC_001>tbody>tr>td:first-child {
+	width: 4em;
+}
+
+
+/* --------------------------------
+  数式の画像サイズを45%に縮小する
+  （数式サイズ調整後は不要）
+-------------------------------- */
+.WS_IMG_SMALL {
+/*	zoom: 0.45;*/
+	vertical-align: middle;
+}
+.WS_IMG_SMALL img {
+	max-width: 100%;
+	margin: 0.1em;
+}
+
+
+/* --------------------------------
+  文字色8色＋グレー2色設定
+-------------------------------- */
+.WS_R_FF0000 {
+	color: #ff0000;			/* 赤 */
+}
+.WS_R_00FF00 {
+	color: #00ff00;			/* 緑 */
+}
+.WS_R_0000FF {
+	color: #0000ff;			/* 青 */
+}
+.WS_R_FF00FF {
+	color: #ff00ff;			/* マゼンタ */
+}
+.WS_R_00FFFF {
+	color: #00ffff;			/* シアン */
+}
+.WS_R_800000 {
+	color: #800000;			/* 茶 */
+}
+.WS_R_008000 {
+	color: #008000;			/* 濃い緑 */
+}
+.WS_R_000080 {
+	color: #000080;			/* 紺色 */
+}
+
+/* word グレー 15% */
+.WS_R_D9D9D9 {
+	color: #d9d9d9;
+}
+/* word グレー 25% */
+.WS_R_BFBFBF {
+	color: #bfbfbf;
+}
+
+
+/* --------------------------------
+  表紙スタイル設定
+-------------------------------- */
+.WS_COVER_1 {
+	font-size: 3.2em;
+	color: #2F5496;
+	text-align: left;
+	font-weight: bold;
+	line-height: 1.1;
+	margin-top: 32px;
+	margin-left: 1em;
+}
+.WS_COVER_2 {
+	font-size: 2.4em;
+	text-align: left;
+	color: #2F5496;
+	line-height: 1.1;
+	margin-top: 1.2em;
+	margin-left: 1.4em;
+}
+
+.WS_COVER_3 {
+	font-size: 1.9em;
+	color: #333;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1.5;
+	margin-top: 2em;
+}
+
+.WS_COVER_4 {
+	font-size: 1.8em;
+	color: #333;
+	text-align: right;
+	font-weight: bold;
+	line-height: 1.5;
+	margin-top: 2em;
+}
+
+.WS_COVER_5 {
+	font-size: 3.2em;
+	color: #2F5496;
+	text-align: left;
+	font-weight: bold;
+	line-height: 1.7;
+	margin-top: 1.1;
+	margin-left: 1em;
+}
+
+.WS_COVER_1 img,
+.WS_COVER_3 img {
+	max-width: 90%;
+}
+
+
+/* --------------------------------
+  目次スタイル設定
+-------------------------------- */
+.WS_TOC_01 {
+	text-align: left;
+	line-height: 1.429rem;
+	font-size: 1.143rem;
+	margin-left: 5.67rem;
+	text-indent: -5.67rem;
+}
+
+.WS_TOC_02 {
+	text-align: left;
+	line-height: 1.429rem;
+	font-size: 1.143rem;
+	margin-left: 5.67rem;
+	text-indent: -5.67rem;
+}
+
+.WS_TOC_03 {
+	text-align: left;
+	line-height: 1.188rem;
+	font-size: 0.95rem;
+	margin-left: 8.51rem;
+	text-indent: -8.51rem;
+	padding-left: 10mm;
+}
+
+.WS_TOC_04 {
+	text-align: left;
+	line-height: 1.071rem;
+	font-size: 0.857rem;
+	margin-left: 8.51rem;
+	text-indent: -8.51rem;
+	padding-left: 25mm;
+}
+
+.WS_TOC_05 {
+	text-align: left;
+	line-height: 0.931rem;
+	font-size: 0.745rem;
+	margin-left: 8.51rem;
+	text-indent: -8.51rem;
+	padding-left: 40mm;
+}
+
+.WS_INDEX_KEY {
+	font-size: 1.222rem;
+	line-height: 1.333rem;
+	font-weight: bold;
+	font-style: italic;
+	margin-top: 1.111rem;
+}
+
+.WS_INDEX_VALUE {
+	font-size: 1rem;
+	line-height: 1.333rem;
+	margin-right: 1.333rem;
+	margin-left: 4.5rem;
+	text-indent: -2.25rem;
+}
+
+.WS_XXHEADER1 {
+	font-size: 1.111rem;
+	line-height: 2rem;
+	text-decoration: underline;
+}
+
+.WS_XXFOOTER1 {
+	font-size: 1rem;
+	line-height: 1.333rem;
+}
+
+/* テーブルにスクロールバーを付ける */
+.WS_SET_SCROLL {
+	overflow: auto;
+}
+table .WS_SET_SCROLL {
+	overflow: visible;
+}
+
+
+/* --------------------------------
+  画面サイズが679px以下の場合
+-------------------------------- */
+@media screen and (max-width: 679px) {
+
+	/* --------------------------------
+	  タイトルスタイル設定
+	-------------------------------- */
+	.WS_H_0 {
+		font-size: 2.1em;
+/*		line-height: 0.6em;*/
+	}
+
+	.WS_H_1,
+	.WS_H_2,
+	.WS_H_3,
+	.WS_H_4,
+	.WS_H_A1,
+	.WS_H_A2,
+	.WS_H_A3,
+	.WS_H_A4,
+	.WS_H_N1,
+	.WS_H_N2,
+	.WS_H_N3 {
+		padding: 0 0 8px;
+	}
+	.WS_H_1,
+	.WS_H_A1,
+	.WS_H_N1 {
+		font-size: 1.7em;
+	}
+	.WS_H_2,
+	.WS_H_A2,
+	.WS_H_N2 {
+		font-size: 1.5em;
+	}
+	.WS_H_3,
+	.WS_H_A3,
+	.WS_H_N3 {
+		font-size: 1.3em;
+	}
+	.WS_H_4,
+	.WS_H_A4 {
+		font-size: 1.2em;
+	}
+	.WS_H_1 span.WS_HEADLINE,
+	.WS_H_2 span.WS_HEADLINE,
+	.WS_H_3 span.WS_HEADLINE,
+	.WS_H_4 span.WS_HEADLINE,
+	.WS_H_A1 span.WS_HEADLINE,
+	.WS_H_A2 span.WS_HEADLINE,
+	.WS_H_A3 span.WS_HEADLINE,
+	.WS_H_A4 span.WS_HEADLINE {
+		display: block;
+		width: 100%;
+/*		clear: both;*/
+	}
+	.WS_H_1 span.WS_HEADLINE,
+	.WS_H_A1 span.WS_HEADLINE {
+		font-size: 1.29em;
+	}
+	.WS_H_2 span.WS_HEADLINE,
+	.WS_H_A2 span.WS_HEADLINE {
+		font-size: 1.33em;
+	}
+	.WS_H_3 span.WS_HEADLINE,
+	.WS_H_A3 span.WS_HEADLINE {
+		font-size: 1.38em;
+	}
+	.WS_H_4 span.WS_HEADLINE,
+	.WS_H_A4 span.WS_HEADLINE {
+		font-size: 1.4em;
+	}
+
+	.WS_COVER_1,
+	.WS_COVER_2,
+	.WS_COVER_5 {
+		margin-left: 0;
+	}
+
+	.WS_COVER_1,
+	.WS_COVER_5 {
+		font-size: 1.8em;
+	}
+	
+	.WS_COVER_2 {
+		font-size: 1.4em;
+	}
+
+	.WS_COVER_4 {
+		font-size: 1em;
+	}
+
+	/* --------------------------------
+	  テーブルスタイル設定
+	-------------------------------- */
+	.WS_T_WHS_001,
+	.WS_T_WHS_002,
+	.WS_T_WHS_003,
+	.WS_T_WHS_004 {
+		width: 90%;
+	}
+
+	table .WS_T_WHS_001,
+	table .WS_T_WHS_002,
+	table .WS_T_WHS_003,
+	table .WS_T_WHS_004 {
+		width: 100%;
+	}
+
+
+	/* --------------------------------
+	  画像スタイル設定
+	-------------------------------- */
+	.WS_PIC_2,
+	.WS_PIC_6,
+	.WS_PIC_7 {
+		width: 90%;
+	}
+
+	table .WS_PIC_2,
+	table .WS_PIC_6,
+	table .WS_PIC_7 {
+		width: 100%;
+	}
+
+
+	/* テーブルにスクロールバーを付ける */
+	/*.WS_SCROLL td {
+		white-space: nowrap;
+	}
+	.WS_SCROLL {
+		overflow: auto;
+	}
+	.WS_SCROLL table .WS_SCROLL {
+		overflow: visible;
+	}
+	.WS_SCROLL table .WS_SCROLL td {
+		white-space: normal
+	}*/
+
+}
+
+/* End of CSS */
