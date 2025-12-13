@@ -1,0 +1,41 @@
+Astro の起動方法（確定版）
+① コマンドプロンプトを開く
+
+スタートメニュー
+
+cmd と入力
+
+コマンドプロンプトを起動
+
+② Astro プロジェクトのフォルダへ移動
+cd C:\astro
+
+
+※ package.json があるフォルダです。
+
+③ Astro を起動（開発サーバ）
+npm run dev
+
+④ 起動できたか確認
+
+コマンド画面に、必ず次が表示されます。
+
+astro v5.x.x ready
+Local: http://localhost:4321/
+watching for file changes...
+
+⑤ ブラウザで表示
+
+ブラウザ（Chrome / Edge など）で：
+
+http://localhost:4321/
+
+
+👉 ポータルトップが表示されれば成功です。
+
+***
+
+https://github.com
+deoapfsd
+nobuyuki.ishikawa@sec-japan.co.jp
+soias7das8fH
