@@ -1,6 +1,289 @@
-<!DOCTYPE html><html lang="ja" data-astro-cid-j7pv25f6> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>マニュアルポータル</title><link rel="stylesheet" href="/manual-portal/_astro/index.BVFFjlkb.css"></head> <body data-astro-cid-j7pv25f6> <header class="wrap" data-astro-cid-j7pv25f6> <div class="title" data-astro-cid-j7pv25f6> <h1 data-astro-cid-j7pv25f6>マニュアルポータル</h1> <p class="lead" data-astro-cid-j7pv25f6>
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>マニュアルポータル</title><style>
+      :root {
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+        --radius: 16px;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      header {
+        padding: 28px 18px 10px;
+      }
+
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 18px 40px;
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 26px;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* ===== 部門選択 ===== */
+      .dept-screen {
+        margin-top: 16px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      }
+      .dept-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .dept-title {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .dept-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 10px;
+      }
+      .dept-btn {
+        grid-column: span 12;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: #fff;
+        cursor: pointer;
+        text-align: left;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 14px;
+      }
+      .dept-btn:hover {
+        border-color: #cfd5df;
+      }
+      .dept-count {
+        color: var(--muted);
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      @media (min-width: 740px) {
+        .dept-btn { grid-column: span 6; }
+      }
+      @media (min-width: 980px) {
+        .dept-btn { grid-column: span 4; }
+      }
+
+      /* ===== ツールバー（部門選択後だけ表示） ===== */
+      .toolbar {
+        margin-top: 14px;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .search {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 10px 14px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        width: 100%;
+        max-width: 520px;
+      }
+
+      .search input {
+        width: 100%;
+        border: 0;
+        outline: none;
+        font-size: 16px;
+      }
+
+      #clearBtn {
+        border: 0;
+        background: transparent;
+        font-size: 16px;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      #clearBtn.hidden { visibility: hidden; }
+
+      .mode {
+        display: flex;
+        gap: 6px;
+      }
+
+      .mode button {
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .mode button.active {
+        background: #111827;
+        color: #fff;
+      }
+
+      .hint {
+        width: 100%;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .subbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .current-dept {
+        font-size: 12px;
+        color: var(--muted);
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 6px 10px;
+      }
+      .back-btn {
+        font-size: 12px;
+        border: 1px solid var(--border);
+        background: #fff;
+        border-radius: 999px;
+        padding: 6px 10px;
+        cursor: pointer;
+      }
+
+      /* ===== カード ===== */
+      .grid {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+      }
+
+      .card {
+        grid-column: span 12;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .card a {
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .card h2 {
+        margin: 0 0 6px;
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .desc {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #f3f4f6;
+        border: 1px solid var(--border);
+      }
+
+      .updated {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      @media (min-width: 740px) {
+        .card { grid-column: span 6; }
+      }
+      @media (min-width: 980px) {
+        .card { grid-column: span 4; }
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding: 24px 0;
+        border-top: 1px solid var(--border);
+        background: var(--bg);
+      }
+
+      .footer-text {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* 共通 */
+      .hidden { display: none !important; }
+    </style></head> <body> <header class="wrap"> <div class="title"> <h1>マニュアルポータル</h1> <p class="lead">
 分散しているマニュアルを集約し、迷わず目的の資料にたどり着ける閲覧ポータルです。
-</p> </div> <!-- 部門選択画面（初期表示） --> <section class="dept-screen" id="deptScreen" data-astro-cid-j7pv25f6> <div class="dept-head" data-astro-cid-j7pv25f6> <p class="dept-title" data-astro-cid-j7pv25f6>部門を選択してください</p> </div> <div class="dept-grid" data-astro-cid-j7pv25f6> <button class="dept-btn" type="button" data-dept="__ALL__" data-astro-cid-j7pv25f6> <span data-astro-cid-j7pv25f6>すべて</span> <span class="dept-count" data-astro-cid-j7pv25f6>4 件</span> </button> <button class="dept-btn" type="button" data-dept="DDS部" data-astro-cid-j7pv25f6> <span data-astro-cid-j7pv25f6>DDS部</span> <span class="dept-count" data-astro-cid-j7pv25f6>1 件</span> </button><button class="dept-btn" type="button" data-dept="市民課" data-astro-cid-j7pv25f6> <span data-astro-cid-j7pv25f6>市民課</span> <span class="dept-count" data-astro-cid-j7pv25f6>1 件</span> </button><button class="dept-btn" type="button" data-dept="全社" data-astro-cid-j7pv25f6> <span data-astro-cid-j7pv25f6>全社</span> <span class="dept-count" data-astro-cid-j7pv25f6>2 件</span> </button> </div> </section> <!-- 検索/ANDOR（部門選択後に表示） --> <div class="toolbar hidden" id="toolbar" data-astro-cid-j7pv25f6> <div class="subbar" data-astro-cid-j7pv25f6> <span class="current-dept" id="currentDept" data-astro-cid-j7pv25f6>部門：-</span> <button class="back-btn" id="backToDept" type="button" data-astro-cid-j7pv25f6>部門選択に戻る</button> </div> <div class="search" data-astro-cid-j7pv25f6> <span data-astro-cid-j7pv25f6>🔎</span> <input id="q" type="text" placeholder="マニュアルの絞り込み（例：業務 インストール）" data-astro-cid-j7pv25f6> <button id="clearBtn" type="button" class="hidden" data-astro-cid-j7pv25f6>×</button> </div> <div class="mode" data-astro-cid-j7pv25f6> <button id="modeAnd" class="active" data-astro-cid-j7pv25f6>AND</button> <button id="modeOr" data-astro-cid-j7pv25f6>OR</button> </div> <div class="hint" data-astro-cid-j7pv25f6>※ キーワードは空白区切り</div> </div> </header> <main class="wrap" data-astro-cid-j7pv25f6> <section class="grid hidden" id="cards" data-astro-cid-j7pv25f6> <article class="card" data-dept="DDS部" data-search="郵送作業マニュアル 「郵送業務依頼共有」における郵送作業の手順を説明します。 業務 HTML DDS部" data-astro-cid-j7pv25f6> <a href="./manuals/manual_00/index.html" target="_blank" rel="noopener noreferrer" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>郵送作業マニュアル</h2> <p class="desc" data-astro-cid-j7pv25f6>「郵送業務依頼共有」における郵送作業の手順を説明します。</p> <div class="meta" data-astro-cid-j7pv25f6> <div class="tags" data-astro-cid-j7pv25f6> <span class="tag" data-astro-cid-j7pv25f6>業務</span><span class="tag" data-astro-cid-j7pv25f6>HTML</span><span class="tag" data-astro-cid-j7pv25f6>DDS部</span> </div> <div class="updated" data-astro-cid-j7pv25f6>更新: 2025-07-12</div> </div> </a> </article><article class="card" data-dept="全社" data-search="Teamsインストールマニュアル（無料版Teams） 無料版Teamsをインストールする手順を説明します。 ツール HTML 全社" data-astro-cid-j7pv25f6> <a href="./manuals/manual_01/index.html" target="_blank" rel="noopener noreferrer" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Teamsインストールマニュアル（無料版Teams）</h2> <p class="desc" data-astro-cid-j7pv25f6>無料版Teamsをインストールする手順を説明します。</p> <div class="meta" data-astro-cid-j7pv25f6> <div class="tags" data-astro-cid-j7pv25f6> <span class="tag" data-astro-cid-j7pv25f6>ツール</span><span class="tag" data-astro-cid-j7pv25f6>HTML</span><span class="tag" data-astro-cid-j7pv25f6>全社</span> </div> <div class="updated" data-astro-cid-j7pv25f6>更新: 2025-09-12</div> </div> </a> </article><article class="card" data-dept="市民課" data-search="転入届処理マニュアル 転入届の処理手順を説明します。 業務 PDF 市民課" data-astro-cid-j7pv25f6> <a href="./manuals/manual_02/サンプル転入届処理マニュアル_20241111.pdf" target="_blank" rel="noopener noreferrer" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>転入届処理マニュアル</h2> <p class="desc" data-astro-cid-j7pv25f6>転入届の処理手順を説明します。</p> <div class="meta" data-astro-cid-j7pv25f6> <div class="tags" data-astro-cid-j7pv25f6> <span class="tag" data-astro-cid-j7pv25f6>業務</span><span class="tag" data-astro-cid-j7pv25f6>PDF</span><span class="tag" data-astro-cid-j7pv25f6>市民課</span> </div> <div class="updated" data-astro-cid-j7pv25f6>更新: 2025-12-13</div> </div> </a> </article><article class="card" data-dept="全社" data-search="「仮想デスクトップ」使用手順 仮想デスクトップ機能の使い方を説明します。 PCスキル 動画 全社" data-astro-cid-j7pv25f6> <a href="./manuals/manual_03/サンプルPC画面操作動画_20241115.mp4" target="_blank" rel="noopener noreferrer" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>「仮想デスクトップ」使用手順</h2> <p class="desc" data-astro-cid-j7pv25f6>仮想デスクトップ機能の使い方を説明します。</p> <div class="meta" data-astro-cid-j7pv25f6> <div class="tags" data-astro-cid-j7pv25f6> <span class="tag" data-astro-cid-j7pv25f6>PCスキル</span><span class="tag" data-astro-cid-j7pv25f6>動画</span><span class="tag" data-astro-cid-j7pv25f6>全社</span> </div> <div class="updated" data-astro-cid-j7pv25f6>更新: 2025-11-23</div> </div> </a> </article> </section> </main> <footer class="footer" data-astro-cid-j7pv25f6> <div class="wrap" data-astro-cid-j7pv25f6> <p class="footer-text" data-astro-cid-j7pv25f6>本ポータルは社内向けマニュアル閲覧用サイトです。</p> <p class="footer-text" data-astro-cid-j7pv25f6>※ 内容の最終判断・運用は各部署にて行ってください。</p> </div> </footer> <script>
+</p> </div> <!-- 部門選択画面（初期表示） --> <section class="dept-screen" id="deptScreen"> <div class="dept-head"> <p class="dept-title">部門を選択してください</p> </div> <div class="dept-grid"> <button class="dept-btn" type="button" data-dept="__ALL__"> <span>すべて</span> <span class="dept-count">4 件</span> </button> <button class="dept-btn" type="button" data-dept="DDS部"> <span>DDS部</span> <span class="dept-count">1 件</span> </button><button class="dept-btn" type="button" data-dept="市民課"> <span>市民課</span> <span class="dept-count">1 件</span> </button><button class="dept-btn" type="button" data-dept="全社"> <span>全社</span> <span class="dept-count">2 件</span> </button> </div> </section> <!-- 検索/ANDOR（部門選択後に表示） --> <div class="toolbar hidden" id="toolbar"> <div class="subbar"> <span class="current-dept" id="currentDept">部門：-</span> <button class="back-btn" id="backToDept" type="button">部門選択に戻る</button> </div> <div class="search"> <span>🔎</span> <input id="q" type="text" placeholder="マニュアルの絞り込み（例：業務 インストール）"> <button id="clearBtn" type="button" class="hidden">×</button> </div> <div class="mode"> <button id="modeAnd" class="active">AND</button> <button id="modeOr">OR</button> </div> <div class="hint">※ キーワードは空白区切り</div> </div> </header> <main class="wrap"> <section class="grid hidden" id="cards"> <article class="card" data-dept="DDS部" data-search="郵送作業マニュアル 「郵送業務依頼共有」における郵送作業の手順を説明します。 業務 HTML DDS部"> <a href="./manuals/manual_00/index.html" target="_blank" rel="noopener noreferrer"> <h2>郵送作業マニュアル</h2> <p class="desc">「郵送業務依頼共有」における郵送作業の手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">業務</span><span class="tag">HTML</span><span class="tag">DDS部</span> </div> <div class="updated">更新: 2025-07-12</div> </div> </a> </article><article class="card" data-dept="全社" data-search="Teamsインストールマニュアル（無料版Teams） 無料版Teamsをインストールする手順を説明します。 ツール HTML 全社"> <a href="./manuals/manual_01/index.html" target="_blank" rel="noopener noreferrer"> <h2>Teamsインストールマニュアル（無料版Teams）</h2> <p class="desc">無料版Teamsをインストールする手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">ツール</span><span class="tag">HTML</span><span class="tag">全社</span> </div> <div class="updated">更新: 2025-09-12</div> </div> </a> </article><article class="card" data-dept="市民課" data-search="転入届処理マニュアル 転入届の処理手順を説明します。 業務 PDF 市民課"> <a href="./manuals/manual_02/サンプル転入届処理マニュアル_20241111.pdf" target="_blank" rel="noopener noreferrer"> <h2>転入届処理マニュアル</h2> <p class="desc">転入届の処理手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">業務</span><span class="tag">PDF</span><span class="tag">市民課</span> </div> <div class="updated">更新: 2025-12-13</div> </div> </a> </article><article class="card" data-dept="全社" data-search="「仮想デスクトップ」使用手順 仮想デスクトップ機能の使い方を説明します。 PCスキル 動画 全社"> <a href="./manuals/manual_03/サンプルPC画面操作動画_20241115.mp4" target="_blank" rel="noopener noreferrer"> <h2>「仮想デスクトップ」使用手順</h2> <p class="desc">仮想デスクトップ機能の使い方を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">PCスキル</span><span class="tag">動画</span><span class="tag">全社</span> </div> <div class="updated">更新: 2025-11-23</div> </div> </a> </article> </section> </main> <footer class="footer"> <div class="wrap"> <p class="footer-text">本ポータルは社内向けマニュアル閲覧用サイトです。</p> <p class="footer-text">※ 内容の最終判断・運用は各部署にて行ってください。</p> </div> </footer> <script>
       document.addEventListener("DOMContentLoaded", () => {
         const deptScreen = document.getElementById("deptScreen");
         const toolbar = document.getElementById("toolbar");
