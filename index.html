@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>マニュアルポータル</title><style>
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>デジタルマニュアル</title><style>
       :root {
         --bg: #f6f7fb;
         --card: #ffffff;
@@ -54,6 +54,7 @@
         padding: 14px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
       }
+
       .dept-head {
         display: flex;
         align-items: baseline;
@@ -62,17 +63,20 @@
         flex-wrap: wrap;
         margin-bottom: 10px;
       }
+
       .dept-title {
         margin: 0;
         font-size: 14px;
         color: var(--muted);
         font-weight: 700;
       }
+
       .dept-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 10px;
       }
+
       .dept-btn {
         grid-column: span 12;
         padding: 12px 14px;
@@ -88,9 +92,11 @@
         gap: 10px;
         font-size: 14px;
       }
+
       .dept-btn:hover {
         border-color: #cfd5df;
       }
+
       .dept-count {
         color: var(--muted);
         font-size: 12px;
@@ -98,10 +104,14 @@
       }
 
       @media (min-width: 740px) {
-        .dept-btn { grid-column: span 6; }
+        .dept-btn {
+          grid-column: span 6;
+        }
       }
       @media (min-width: 980px) {
-        .dept-btn { grid-column: span 4; }
+        .dept-btn {
+          grid-column: span 4;
+        }
       }
 
       /* ===== ツールバー（部門選択後だけ表示） ===== */
@@ -140,7 +150,9 @@
         cursor: pointer;
         color: var(--muted);
       }
-      #clearBtn.hidden { visibility: hidden; }
+      #clearBtn.hidden {
+        visibility: hidden;
+      }
 
       .mode {
         display: flex;
@@ -174,6 +186,7 @@
         gap: 10px;
         flex-wrap: wrap;
       }
+
       .current-dept {
         font-size: 12px;
         color: var(--muted);
@@ -182,6 +195,7 @@
         border-radius: 999px;
         padding: 6px 10px;
       }
+
       .back-btn {
         font-size: 12px;
         border: 1px solid var(--border);
@@ -231,18 +245,21 @@
         text-overflow: ellipsis;
       }
 
+      /* ★ タグ行＋更新日を「必ず」2段にする */
       .meta {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column; /* 縦並び */
+        align-items: flex-start;
         gap: 8px;
-        flex-wrap: wrap;
       }
 
+      /* タグは「1行固定」前提（はみ出しは隠す） */
       .tags {
         display: flex;
         gap: 6px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* 2行にしない */
+        overflow: hidden;
+        width: 100%;
       }
 
       .tag {
@@ -251,6 +268,10 @@
         border-radius: 999px;
         background: #f3f4f6;
         border: 1px solid var(--border);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 12em; /* 長い部署名などは ...（必要なら調整） */
       }
 
       .updated {
@@ -259,10 +280,14 @@
       }
 
       @media (min-width: 740px) {
-        .card { grid-column: span 6; }
+        .card {
+          grid-column: span 6;
+        }
       }
       @media (min-width: 980px) {
-        .card { grid-column: span 4; }
+        .card {
+          grid-column: span 4;
+        }
       }
 
       .footer {
@@ -280,10 +305,14 @@
       }
 
       /* 共通 */
-      .hidden { display: none !important; }
-    </style></head> <body> <header class="wrap"> <div class="title"> <h1>マニュアルポータル</h1> <p class="lead">
+      .hidden {
+        display: none !important;
+      }
+    </style></head> <body> <header class="wrap"> <div class="title"> <h1>デジタルマニュアル</h1> <p class="lead">
 分散しているマニュアルを集約し、迷わず目的の資料にたどり着ける閲覧ポータルです。
-</p> </div> <!-- 部門選択画面（初期表示） --> <section class="dept-screen" id="deptScreen"> <div class="dept-head"> <p class="dept-title">部門を選択してください</p> </div> <div class="dept-grid"> <button class="dept-btn" type="button" data-dept="__ALL__"> <span>すべて</span> <span class="dept-count">4 件</span> </button> <button class="dept-btn" type="button" data-dept="DDS部"> <span>DDS部</span> <span class="dept-count">1 件</span> </button><button class="dept-btn" type="button" data-dept="市民課"> <span>市民課</span> <span class="dept-count">1 件</span> </button><button class="dept-btn" type="button" data-dept="全社"> <span>全社</span> <span class="dept-count">2 件</span> </button> </div> </section> <!-- 検索/ANDOR（部門選択後に表示） --> <div class="toolbar hidden" id="toolbar"> <div class="subbar"> <span class="current-dept" id="currentDept">部門：-</span> <button class="back-btn" id="backToDept" type="button">部門選択に戻る</button> </div> <div class="search"> <span>🔎</span> <input id="q" type="text" placeholder="マニュアルの絞り込み（例：業務 インストール）"> <button id="clearBtn" type="button" class="hidden">×</button> </div> <div class="mode"> <button id="modeAnd" class="active">AND</button> <button id="modeOr">OR</button> </div> <div class="hint">※ キーワードは空白区切り</div> </div> </header> <main class="wrap"> <section class="grid hidden" id="cards"> <article class="card" data-dept="DDS部" data-search="郵送作業マニュアル 「郵送業務依頼共有」における郵送作業の手順を説明します。 業務 HTML DDS部"> <a href="./manuals/manual_00/index.html" target="_blank" rel="noopener noreferrer"> <h2>郵送作業マニュアル</h2> <p class="desc">「郵送業務依頼共有」における郵送作業の手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">業務</span><span class="tag">HTML</span><span class="tag">DDS部</span> </div> <div class="updated">更新: 2025-07-12</div> </div> </a> </article><article class="card" data-dept="全社" data-search="Teamsインストールマニュアル（無料版Teams） 無料版Teamsをインストールする手順を説明します。 ツール HTML 全社"> <a href="./manuals/manual_01/index.html" target="_blank" rel="noopener noreferrer"> <h2>Teamsインストールマニュアル（無料版Teams）</h2> <p class="desc">無料版Teamsをインストールする手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">ツール</span><span class="tag">HTML</span><span class="tag">全社</span> </div> <div class="updated">更新: 2025-09-12</div> </div> </a> </article><article class="card" data-dept="市民課" data-search="転入届処理マニュアル 転入届の処理手順を説明します。 業務 PDF 市民課"> <a href="./manuals/manual_02/サンプル転入届処理マニュアル_20241111.pdf" target="_blank" rel="noopener noreferrer"> <h2>転入届処理マニュアル</h2> <p class="desc">転入届の処理手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">業務</span><span class="tag">PDF</span><span class="tag">市民課</span> </div> <div class="updated">更新: 2025-12-13</div> </div> </a> </article><article class="card" data-dept="全社" data-search="「仮想デスクトップ」使用手順 仮想デスクトップ機能の使い方を説明します。 PCスキル 動画 全社"> <a href="./manuals/manual_03/サンプルPC画面操作動画_20241115.mp4" target="_blank" rel="noopener noreferrer"> <h2>「仮想デスクトップ」使用手順</h2> <p class="desc">仮想デスクトップ機能の使い方を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">PCスキル</span><span class="tag">動画</span><span class="tag">全社</span> </div> <div class="updated">更新: 2025-11-23</div> </div> </a> </article> </section> </main> <footer class="footer"> <div class="wrap"> <p class="footer-text">本ポータルは社内向けマニュアル閲覧用サイトです。</p> <p class="footer-text">※ 内容の最終判断・運用は各部署にて行ってください。</p> </div> </footer> <script>
+</p> </div> <!-- 部門選択画面（初期表示） --> <section class="dept-screen" id="deptScreen"> <div class="dept-head"> <p class="dept-title">部門を選択してください</p> </div> <div class="dept-grid"> <button class="dept-btn" type="button" data-dept="__ALL__"> <span>すべて</span> <span class="dept-count">4 件</span> </button> <button class="dept-btn" type="button" data-dept="業務部"> <span>業務部</span> <span class="dept-count">1 件</span> </button><button class="dept-btn" type="button" data-dept="情報システム部"> <span>情報システム部</span> <span class="dept-count">2 件</span> </button><button class="dept-btn" type="button" data-dept="総務部"> <span>総務部</span> <span class="dept-count">1 件</span> </button> </div> </section> <!-- 検索/ANDOR（部門選択後に表示） --> <div class="toolbar hidden" id="toolbar"> <div class="subbar"> <span class="current-dept" id="currentDept">部門：-</span> <button class="back-btn" id="backToDept" type="button">
+部門選択に戻る
+</button> </div> <div class="search"> <span>🔎</span> <input id="q" type="text" placeholder="マニュアルの絞り込み（例：業務 インストール）"> <button id="clearBtn" type="button" class="hidden">×</button> </div> <div class="mode"> <button id="modeAnd" class="active">AND</button> <button id="modeOr">OR</button> </div> <div class="hint">※ キーワードは空白区切り</div> </div> </header> <main class="wrap"> <section class="grid hidden" id="cards"> <article class="card" data-dept="業務部" data-search="郵送作業マニュアル 「郵送業務依頼共有」における郵送作業の手順を説明します。 業務 HTML 業務部"> <a href="./manuals/manual_00/index.html" target="_blank" rel="noopener noreferrer"> <h2>郵送作業マニュアル</h2> <p class="desc">「郵送業務依頼共有」における郵送作業の手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">業務</span><span class="tag">HTML</span><span class="tag">業務部</span> </div> <div class="updated">更新: 2025-07-12</div> </div> </a> </article><article class="card" data-dept="情報システム部" data-search="Teamsインストールマニュアル（無料版Teams） 無料版Teamsをインストールする手順を説明します。 ツール HTML 情報システム部"> <a href="./manuals/manual_01/index.html" target="_blank" rel="noopener noreferrer"> <h2>Teamsインストールマニュアル（無料版Teams）</h2> <p class="desc">無料版Teamsをインストールする手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">ツール</span><span class="tag">HTML</span><span class="tag">情報システム部</span> </div> <div class="updated">更新: 2025-09-12</div> </div> </a> </article><article class="card" data-dept="総務部" data-search="転入届処理マニュアル 転入届の処理手順を説明します。 業務 PDF 総務部"> <a href="./manuals/manual_02/サンプル転入届処理マニュアル_20241111.pdf" target="_blank" rel="noopener noreferrer"> <h2>転入届処理マニュアル</h2> <p class="desc">転入届の処理手順を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">業務</span><span class="tag">PDF</span><span class="tag">総務部</span> </div> <div class="updated">更新: 2025-12-13</div> </div> </a> </article><article class="card" data-dept="情報システム部" data-search="「仮想デスクトップ」使用手順 仮想デスクトップ機能の使い方を説明します。 PCスキル 動画 情報システム部"> <a href="./manuals/manual_03/サンプルPC画面操作動画_20241115.mp4" target="_blank" rel="noopener noreferrer"> <h2>「仮想デスクトップ」使用手順</h2> <p class="desc">仮想デスクトップ機能の使い方を説明します。</p> <div class="meta"> <div class="tags"> <span class="tag">PCスキル</span><span class="tag">動画</span><span class="tag">情報システム部</span> </div> <div class="updated">更新: 2025-11-23</div> </div> </a> </article> </section> </main> <footer class="footer"> <div class="wrap"> <p class="footer-text">本ポータルは社内向けマニュアル閲覧用サイトです。</p> <p class="footer-text">※ 内容の最終判断・運用は各部署にて行ってください。</p> </div> </footer> <script>
       document.addEventListener("DOMContentLoaded", () => {
         const deptScreen = document.getElementById("deptScreen");
         const toolbar = document.getElementById("toolbar");
@@ -358,8 +387,8 @@
           deptScreen.classList.remove("hidden");
         }
 
-        // 部門ボタン
-        document.querySelectorAll("[data-dept]").forEach((btn) => {
+        // 部門ボタン（部門選択画面内だけを対象にする）
+        deptScreen.querySelectorAll("[data-dept]").forEach((btn) => {
           btn.addEventListener("click", () => {
             const dept = btn.getAttribute("data-dept");
             enterDept(dept);
